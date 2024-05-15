@@ -1,14 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <img
+          src="https://cdn-icons-png.flaticon.com/128/610/610021.png"
+          alt=""
+          class="logo"
+        />
+        <ul>
+          <li><a href="#">BOOK</a></li>
+          <li><a href="#">MANAGE</a></li>
+          <li><a href="#">INFO TRAVEL</a></li>
+          <li><a href="#">EXPLORE</a></li>
+          <li><a href="#">ABOUT US</a></li>
+        </ul>
+      </nav>
+      <div class="userAccount display-flex-wrap">
+        <img
+          src="https://cdn-icons-png.flaticon.com/128/64/64572.png"
+          alt=""
+          class="proIcon"
+        />
+        <button class="signup btn-effect">Sign Up</button>
+        <button class="signin btn-effect">Sign In</button>
+      </div>
+    </header>
+    <main>
+      <div class="subHeader">
+        <label class="switch">
+          <input type="checkbox" />
+          <span class="slider round"></span>
+        </label>
+      </div>
+      <div class="search-container">
+        <form action="/search" method="GET">
+          <div class="search-bar">
+            <label for="from">From:</label>
+            <input
+              type="text"
+              id="from"
+              name="from"
+              placeholder="Enter starting location"
+              required
+            />
+          </div>
+          <div class="search-bar">
+            <label for="to">To:</label>
+            <input
+              type="text"
+              id="to"
+              name="to"
+              placeholder="Enter destination"
+              required
+            />
+          </div>
+        </form>
+        <form action="">
+          <div class="date-section">
+            <label for="from-date">Depart:</label>
+            <input
+              type="text"
+              id="from-date"
+              name="from-date"
+              placeholder="Select Departure Date"
+              required
+            />
+          </div>
+          <div class="date-section">
+            <label for="to-date">Return:</label>
+            <input
+              type="text"
+              id="to-date"
+              name="to-date"
+              placeholder="Select Return Date"
+              required
+            />
+          </div>
+        </form>
+        <button type="submit" class="searchBtn">Search</button>
+      </div>
+
+      <div class="blogsection">
+        <h1>Blog Title</h1>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae, rerum
+          quidem architecto veritatis dignissimos repudiandae ullam assumenda
+          libero omnis. Iusto labore cum suscipit itaque quam obcaecati
+          exercitationem animi sed fugit.
+        </p>
+        <div class="card-container">
+          <div class="card">
+            <h3>Heading</h3>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae,
+              rerum quidem architecto veritatis dignissimos repudiandae ullam
+              assumenda libero omnis. Iusto labore cum suscipit itaque quam
+              obcaecati exercitationem animi sed fugit.
+            </p>
+            <p><a href="#">Read More -></a></p>
+          </div>
+          <div class="card">
+            <h3>Heading</h3>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae,
+              rerum quidem architecto veritatis dignissimos repudiandae ullam
+              assumenda libero omnis. Iusto labore cum suscipit itaque quam
+              obcaecati exercitationem animi sed fugit.
+            </p>
+            <p><a href="#">Read More -></a></p>
+          </div>
+          <div class="card">
+            <h3>Heading</h3>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae,
+              rerum quidem architecto veritatis dignissimos repudiandae ullam
+              assumenda libero omnis. Iusto labore cum suscipit itaque quam
+              obcaecati exercitationem animi sed fugit.
+            </p>
+            <p><a href="#">Read More -></a></p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="fheading">
+        <div class="fcontent">
+          <h3>Get the latest news and Updates</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente
+            reiciendis voluptatem animi velit distinctio similique fugiat
+            quaerat nam temporibus. Quaerat, blanditiis. Totam incidunt
+            provident tenetur. Asperiores quasi voluptas iure iste!
+          </p>
+        </div>
+        <input type="text" placeholder="Enter your Email" />
+        <button>Subscribe</button>
+
+      </div>
+      <div class="mainfooter">
+        <div class="fbox">
+          <img src="https://cdn-icons-png.flaticon.com/128/64/64572.png" alt="" class="proIcon">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet commodi beatae harum est eius nemo ab cupiditate quam iure consequuntur dolore corporis possimus saepe, aliquid quisquam impedit eligendi mollitia ex.</p>
+          <div class="icon-container">
+            <img src="https://cdn-icons-png.flaticon.com/128/64/64572.png" alt="" class="proIcon">
+            <img src="https://cdn-icons-png.flaticon.com/128/64/64572.png" alt="" class="proIcon">
+            <img src="https://cdn-icons-png.flaticon.com/128/64/64572.png" alt="" class="proIcon">
+            <img src="https://cdn-icons-png.flaticon.com/128/64/64572.png" alt="" class="proIcon">
+          </div>
+      </div>
+        <div class="fbox">
+          <h3>Contact us</h3>
+          <p>Sample text</p>
+          <p>Sample text</p>
+          <p>Sample text</p>
+          <p>Sample text</p>
+          
+      </div>
+      <div class="fbox">
+          <h3>Support and help</h3>
+          <p>Sample text</p>
+
+          <p>Sample text</p>
+       
+          <p>Sample text</p>
+          
+          <p>Sample text</p>
+         
+      </div>
+      <div class="fbox">
+        <h3>Contact us</h3>
+        <p>Sample text</p>
+        <p>Sample text</p>
+        <p>Sample text</p>
+        <p>Sample text</p>
+        
+    </div>
+    <div class="fbox">
+        <h3>Support and help</h3>
+        <p>Sample text</p>
+
+        <p>Sample text</p>
+     
+        <p>Sample text</p>
+        
+        <p>Sample text</p>
+       
+  
+    </div>
+      </div>
+
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <script src="script.js"></script>
-</head>
-<body>
-    <h1>hello world!</h1>
-    <h2>tingin ako dd</h2>
-</body>
+  </body>
 </html>

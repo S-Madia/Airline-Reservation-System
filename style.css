@@ -1,6 +1,311 @@
-body{
-    background-color: aqua;
+
+.display-flex-wrap{
+    display: flex;
+    flex-wrap: wrap;
 }
-h1{
-    color: blue;
+/* header */
+header{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+    
 }
+nav{
+    width: auto;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    background-color: white;
+    margin-right: 10px;
+}
+.logo{
+    width: 180px;
+    cursor: pointer;
+    margin-left:50px ;
+}
+.proIcon{
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+nav ul{
+    list-style: none;
+    width: 100%;
+    text-align: center;
+    padding:60px ;
+}
+nav ul li{
+    display: inline-block;
+    margin: 10px 20px;
+    
+}
+nav ul li a{
+    color: grey;
+    text-decoration: none;
+}
+.userAccount{
+    align-items: center;
+    justify-content: space-between;
+}
+.userAccount button{
+    width:80px;
+    height: 50px;
+    margin-right: 10px;
+}
+/* header button */
+.signup{
+    background-color: white;
+    color: cornflowerblue;
+    border: 1px solid cornflowerblue;
+    border-radius: 10px;
+}
+.signin{
+    background-color:cornflowerblue;
+    color: white;
+    border: 1px solid cornflowerblue;
+    border-radius: 10px;
+}
+
+/* /header button */
+
+/* header */
+
+/* button hover effect */
+.btn-effect{
+    box-shadow: inset 0px 0px 0px 0px cornflowerblue;
+    transition: ease-out 0.4s;
+    outline: none;
+}
+
+.btn-effect:hover{
+    box-shadow: inset 250px 0px 0px 0px cornflowerblue;
+    cursor: pointer;
+    color: white;
+}
+/* /button hover effect */
+
+/* sub header */
+.subHeader{
+    width: auto;
+    height: 700px;
+    background-color: grey;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background-image: url(https://wallpapers.com/images/featured/clash-of-clans-f88iyeweabo3r6kz.jpg) ;
+     background-size: cover;
+     padding: 20px;
+}
+/* switch */
+/* The switch - the box around the slider */
+.switch {
+    float: right;
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+  .search-container {
+   display: flex;
+   flex-wrap: wrap;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    justify-content:center;
+    align-items: center;
+   
+}
+
+form {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap:0.5em;
+   
+}
+
+.search-bar {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"] {
+    width: 400px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.searchBtn {
+    width: 700px;
+    padding: 10px;
+    background-color: #40D3DC;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+
+    
+
+}
+.date-section {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.searchBtn:hover {
+    background-color: #35b1b8;
+}
+.blogsection h1{
+display: flex;
+justify-content: center;
+padding: 20px;
+}
+.card-container{
+  display: flex;
+  flex-wrap: wrap;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  justify-content:space-around;
+
+}
+.card{
+  width: 400px;
+  height: auto;
+  background-color: aquamarine;
+  gap: 0.5em;
+  margin-bottom: 0.5em;
+  padding: 20px;
+}
+.card p{
+  width: 100%;
+}
+main{
+    margin-top: 20px;
+}
+
+footer{
+  padding: 20px;
+  flex-wrap: wrap;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+.fheading{
+  display: flex;
+  background-color: lightslategray;
+  justify-content: space-around;
+  align-items: center;
+  gap: 0.5em;
+  padding: 20px;  border-radius: 10px 10px 0 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  
+}
+.fheading input{
+  width: 400px;
+  height: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.fheading button{
+  width: 100px;
+  height: 40px;
+  background-color: #40D3DC;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.mainfooter{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+.fbox{
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 0.5em;
+}
+
+
