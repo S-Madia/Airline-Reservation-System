@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 body{
   margin: 0;
   padding: 0;
@@ -16,17 +17,17 @@ header{
     align-items: center;
     justify-content: space-between;
     padding: 2px;
-    background-color: #fff;
+    background-color: #0a53ffe8;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 nav{
     width: auto;
-    height: 80px;
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 10px 0;
-    background-color: white;
+    /* background-color: #0A54FF; */
     margin-right: 10px;
 }
 .logo{
@@ -35,8 +36,8 @@ nav{
     margin-left:50px ;
 }
 .proIcon{
-    width: 50px;
-    height: 50px;
+    width: 15px;
+    height: 15px;
     cursor: pointer;
     margin-right: 10px;
 }
@@ -44,17 +45,19 @@ nav ul{
     list-style: none;
     width: 100%;
     text-align: center;
-    padding:60px ;
+    padding:60px ;   
 }
 nav ul li{
     display: inline-block;
     margin: 10px 20px;
-    
 }
+
 nav ul li a{
-    color: grey;
+    font-family: "Noto Sans", sans-serif;
     text-decoration: none;
+    color: whitesmoke;
 }
+
 .userAccount{
     align-items: center;
     justify-content: space-between;
@@ -104,8 +107,8 @@ nav ul li a{
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     background-image: url(https://wallpapers.com/images/featured/clash-of-clans-f88iyeweabo3r6kz.jpg) ;
-     background-size: cover;
-     padding: 20px;
+    background-size: cover;
+    padding: 20px;
 }
 /* switch */
 /* The switch - the box around the slider */
