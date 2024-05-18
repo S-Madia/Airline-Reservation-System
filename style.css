@@ -17,7 +17,7 @@ header{
     align-items: center;
     justify-content: space-between;
     padding: 2px;
-    background-color: #0a53ffe8;
+    background-color: #0a53ffee;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 nav{
@@ -31,13 +31,13 @@ nav{
     margin-right: 10px;
 }
 .logo{
-    width: 180px;
+    width: 80px;
     cursor: pointer;
     margin-left:50px ;
 }
 .proIcon{
-    width: 15px;
-    height: 15px;
+    width: 35px;
+    height: 35px;
     cursor: pointer;
     margin-right: 10px;
 }
@@ -106,7 +106,7 @@ nav ul li a{
     background-color: grey;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-    background-image: url(https://wallpapers.com/images/featured/clash-of-clans-f88iyeweabo3r6kz.jpg) ;
+    background-image: url(https://images.unsplash.com/photo-1559305289-4c31700ba9cb?q=80&w=1546&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D) ;
     background-size: cover;
     padding: 20px;
 }
