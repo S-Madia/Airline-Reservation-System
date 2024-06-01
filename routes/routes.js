@@ -54,7 +54,11 @@ router.post('/login', async (req, res)=>{
 
         const isPasswordMatch =  await bcrypt.compare(req.body.password, check.password);
         if(isPasswordMatch){
-            res.render("home")
+            if (req.body.email === "admin@gmail.com") {
+                res.redirect("adminpage"); // Redirect to admin page
+            } else {
+                res.render("home"); // Render home page
+            }
         }else{
             res.send("Wrong password");
         }
@@ -62,6 +66,22 @@ router.post('/login', async (req, res)=>{
         res.send("Wrong Details");
     }
 
+});
+// Admin page route
+// Admin page route
+router.get('/adminpage', async (req, res) => {
+    try {
+        // Fetch all users from the database
+        const users = await User.find().exec();
+        // Render the index view, passing in the title and the list of users
+        res.render("adminpage", {
+            title: "Admin Page",
+            users: users,
+        });
+    } catch (err) {
+        // Handle errors by sending a JSON response with the error message
+        res.json({ message: err.message });
+    }
 });
 // Export the router
 module.exports = router;
