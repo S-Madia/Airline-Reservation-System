@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+body{
+  margin: 0;
+  padding: 0;
+  background-color: whitesmoke;
+}
+.display-flex-wrap{
+    display: flex;
+    flex-wrap: wrap;
+}
+/* header */
+.filler{
+  width: 100%;
+}
+header{
+
+    width: 100%;
+    position: fixed;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2px;
+    background-color: #1A2061;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+nav{
+    width: auto;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    /* background-color: #0A54FF; */
+    margin-right: 10px;
+}
+.logo{
+    width: 80px;
+    cursor: pointer;
+    margin-left:50px ;
+}
+.proIcon{
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+nav ul{
+    list-style: none;
+    width: 100%;
+    text-align: center;
+    padding:60px ;   
+}
+nav ul li{
+    display: inline-block;
+    margin: 10px 20px;
+}
+
+nav ul li a{
+    font-family: "Noto Sans", sans-serif;
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.userAccount{
+    align-items: center;
+    justify-content: space-between;
+}
+.userAccount button{
+    width:80px;
+    height: 50px;
+    margin-right: 10px;
+}
+/* header button */
+
+
+/* /header button */
+
+/* header */
+
+/* button hover effect */
+.btn-effect{
+    box-shadow: inset 0px 0px 0px 0px cornflowerblue;
+    transition: ease-out 0.4s;
+    outline: none;
+}
+
+.btn-effect:hover{
+    box-shadow: inset 250px 0px 0px 0px cornflowerblue;
+    cursor: pointer;
+    color: white;
+}
+/* /button hover effect */
+
+
+/* sub header */
+.subHeader{
+    width: auto;
+    height: 540px;
+    background-color: grey;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background-image: url(https://images.unsplash.com/photo-1559305289-4c31700ba9cb?q=80&w=1546&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D) ;
+    background-size: cover;
+    padding: 20px;
+    
+    
+}
+
+  
+  .search-container {
+    display: flex;
+    flex-wrap: wrap;
+    background: whitesmoke;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    justify-content:center;
+    align-items: center;
+   
+}
+
+form {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap:0.5em;
+   
+}
+
+.search-bar {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"] {
+    width: 400px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.searchBtn {
+    width: 700px;
+    padding: 10px;
+    background-color: #40D3DC;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+
+    
+
+}
+.date-section {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.blogp{
+  padding-left: 1rem;
+}
+.searchBtn:hover {
+    background-color: #35b1b8;
+}
+
+.blogsection h1{
+display: flex;
+justify-content: center;
+padding: 20px;
+}
+.card-container{
+  display: flex;
+  flex-wrap: wrap;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  justify-content:space-around;
+
+}
+.card{
+  width: 400px;
+  height: auto;
+  background-color: #1E2571;
+  gap: 0.5em;
+  margin-bottom: 0.5em;
+  padding: 20px;
+  color: #FAFFEB;
+}
+.card p{
+  width: 100%;
+  color: #FAFFEB;
+}
+main{
+    margin-top: 20px;
+}
+
+footer{
+  padding: 20px;
+  flex-wrap: wrap;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+.fheading{
+  display: flex;
+  background-color: lightslategray;
+  justify-content: space-around;
+  align-items: center;
+  gap: 0.5em;
+  padding: 20px;  border-radius: 10px 10px 0 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  
+}
+.fheading input{
+  width: 400px;
+  height: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.fheading button{
+  width: 100px;
+  height: 40px;
+  background-color: #40D3DC;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.mainfooter{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+.fbox{
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 0.5em;
+}
+
+
