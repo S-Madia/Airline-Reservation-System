@@ -1,0 +1,76 @@
+<%- include('layout/header') %>
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+/>
+<link
+    rel="stylesheet"
+    href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+/>
+<link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+/>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <form action="/addFlight" method="post">
+                        <div class="form-group">
+                            <label for="from">From:</label>
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="from"
+                                name="staringLocation"
+                                placeholder="Enter starting location"
+                                required
+                            />
+                        </div>
+                        <div class="form-group">
+                            <label for="to">To:</label>
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="to"
+                                name="destination"
+                                placeholder="Enter destination"
+                                required
+                            />
+                        </div>
+                        <div class="form-group">
+                            <label for="from-date">Depart:</label>
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="from-date"
+                                name="departure"
+                                placeholder="Select Departure Date"
+                                required
+                            />
+                        </div>
+                        <div class="form-group">
+                            <label for="to-date">Return:</label>
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="to-date"
+                                name="return"
+                                placeholder="Select Return Date"
+                                required
+                            />
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Add Flight</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="/actions.js"></script>
+<%- include('layout/footer') %>
