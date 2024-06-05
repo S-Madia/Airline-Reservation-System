@@ -143,17 +143,14 @@ router.get('/search', async (req, res) => {
             destination: to,
             departure: { $gte: new Date(departureDate) }
         });
-        const returnFlights = await Flight.find({
+
+        const returnFlights = returnDate ? await Flight.find({
             startingLocation: to,
             destination: from,
             departure: { $gte: new Date(returnDate) }
-        });
+        }) : [];
 
-        if (flights.length === 0 && returnFlights.length === 0) {
-            return res.render('flightStatus', { flights: null, returnFlights: null });
-        }
-
-        res.render('flightStatus', { flights, returnFlights }); // Pass both flights and returnFlights
+        res.render('flightStatus', { flights: flights.length ? flights : null, returnFlights: returnFlights.length ? returnFlights : null });
     } catch (err) {
         console.error(err);
         res.status(500).send('Server Error');
