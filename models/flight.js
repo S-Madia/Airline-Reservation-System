@@ -1,6 +1,6 @@
 const mongoose=require('mongoose');
 const flightSchema = new mongoose.Schema({
-    staringLocation:{
+    startingLocation:{
         type: String,
         required: true,
 
@@ -10,15 +10,25 @@ const flightSchema = new mongoose.Schema({
         required: true,
 
     },
+    routecode:{
+        type: String,
+        required: true,
+
+    },
     departure:{
         type: Date,
         required: true,
         default:Date.now,
     },
-    return:{
-        type: Date,
+    timeFlight:{
+        type: String,
         required: true,
         default:Date.now,
+    },
+    price:{
+        type: Number,
+        required: true,
+
     },
     created:{
         type: Date,

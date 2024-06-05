@@ -48,50 +48,25 @@
       <!-- Search form -->
       <div class="search-container">
         <form action="/search" method="GET">
-          <div class="search-bar">
-            <label for="from">From:</label>
-            <input
-              type="text"
-              id="from"
-              name="from"
-              placeholder="Enter starting location"
-              required
-            />
-          </div>
-          <div class="search-bar">
-            <label for="to">To:</label>
-            <input
-              type="text"
-              id="to"
-              name="to"
-              placeholder="Enter destination"
-              required
-            />
-          </div>
-        
-          <div class="date-section">
-            <label for="from-date">Depart:</label>
-            <input
-              type="text"
-              id="from-date"
-              name="from-date"
-              placeholder="Select Departure Date"
-              required
-            />
-          </div>
-          <div class="date-section">
-            <label for="to-date">Return:</label>
-            <input
-              type="text"
-              id="to-date"
-              name="to-date"
-              placeholder="Select Return Date"
-              required
-            />
-          </div>
-          <button type="submit" class="searchBtn">Search</button>
+            <div class="search-bar">
+                <label for="from">From:</label>
+                <input type="text" id="from" name="from" placeholder="Enter starting location" required>
+            </div>
+            <div class="search-bar">
+                <label for="to">To:</label>
+                <input type="text" id="to" name="to" placeholder="Enter destination" required>
+            </div>
+            <div class="date-section">
+                <label for="from-date">Depart:</label>
+                <input type="text" id="from-date" name="departureDate" placeholder="Select Departure Date" required>
+            </div>
+            <div class="date-section">
+                <label for="to-date">Return:</label>
+                <input type="text" id="to-date" name="returnDate" placeholder="Select Return Date">
+            </div>
+            <button type="submit" class="searchBtn">Search</button>
         </form>
-      </div>
+    </div>
       
  <!-- Search form -->
       <div class="blogsection">
@@ -208,5 +183,13 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <script src="/actions.js"></script>
+    <script>
+      flatpickr("#from-date", {
+          dateFormat: "Y-m-d"
+      });
+      flatpickr("#to-date", {
+          dateFormat: "Y-m-d"
+      });
+  </script>
   </body>
 </html>

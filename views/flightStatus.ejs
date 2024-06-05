@@ -1,0 +1,62 @@
+<%- include('layout/header') %>
+<link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+/>
+<main>
+    <div class="container mt-5">
+        <h1>Flight Search Results</h1>
+        <h2>Departing Flights</h2>
+        <div class="row">
+            <% if (flights && flights.length > 0) { %>
+                <% flights.forEach(flight => { %>
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h2 class="card-title"><%= flight.routecode %></h2>
+                                <p class="card-text"><strong>From:</strong> <%= flight.startingLocation %></p>
+                                <p class="card-text"><strong>To:</strong> <%= flight.destination %></p>
+                                <p class="card-text"><strong>Departure:</strong> <%= flight.departure.toDateString() %></p>
+                                <p class="card-text"><strong>Time:</strong> <%= flight.timeFlight %></p>
+                                <p class="card-text"><strong>Price:</strong> ₱<%= flight.price %></p>
+                            </div>
+                        </div>
+                    </div>
+                <% }) %>
+            <% } else { %>
+                <div class="col-12">
+                    <p>No departing flights found for the given criteria.</p>
+                </div>
+            <% } %>
+        </div>
+
+        <h2>Returning Flights</h2>
+<div class="row">
+    <% if (typeof returnFlights !== 'undefined' && returnFlights.length > 0) { %>
+        <% returnFlights.forEach(flight => { %>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h2 class="card-title"><%= flight.routecode %></h2>
+                        <p class="card-text"><strong>From:</strong> <%= flight.startingLocation %></p>
+                        <p class="card-text"><strong>To:</strong> <%= flight.destination %></p>
+                        <p class="card-text"><strong>Departure:</strong> <%= flight.departure.toDateString() %></p>
+                        <p class="card-text"><strong>Time:</strong> <%= flight.timeFlight %></p>
+                        <p class="card-text"><strong>Price:</strong> ₱<%= flight.price %></p>
+                    </div>
+                </div>
+            </div>
+        <% }) %>
+    <% } else if (returnFlights === null) { %>
+        <div class="col-12">
+            <p>No returning flights found for the given criteria.</p>
+        </div>
+    <% } %>
+</div>
+
+    </div>
+</main>
+</main>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<%- include('layout/footer') %>

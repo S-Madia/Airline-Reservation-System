@@ -23,7 +23,7 @@
                                 type="text"
                                 class="form-control"
                                 id="from"
-                                name="staringLocation"
+                                name="startingLocation"
                                 placeholder="Enter starting location"
                                 required
                             />
@@ -40,24 +40,49 @@
                             />
                         </div>
                         <div class="form-group">
-                            <label for="from-date">Depart:</label>
+                            <label for="departure-date">Departure Date:</label>
                             <input
                                 type="text"
                                 class="form-control"
-                                id="from-date"
-                                name="departure"
+                                id="departure-date"
+                                name="departureDate"
                                 placeholder="Select Departure Date"
                                 required
                             />
                         </div>
                         <div class="form-group">
-                            <label for="to-date">Return:</label>
+                            <label for="time-flight-start">Start Time:</label>
                             <input
                                 type="text"
                                 class="form-control"
-                                id="to-date"
-                                name="return"
-                                placeholder="Select Return Date"
+                                id="time-flight-start"
+                                placeholder="Select Start Time"
+                                required
+                            />
+                        </div>
+                        <div class="form-group">
+                            <label for="time-flight-end">End Time:</label>
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="time-flight-end"
+                                placeholder="Select End Time"
+                                required
+                            />
+                        </div>
+                        <input
+                            type="hidden"
+                            name="timeFlight"
+                            id="time-flight"
+                        />
+                        <div class="form-group">
+                            <label for="price">Price:</label>
+                            <input
+                                type="number"
+                                class="form-control"
+                                id="price"
+                                name="price"
+                                placeholder="Enter price"
                                 required
                             />
                         </div>
@@ -72,5 +97,31 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script src="/actions.js"></script>
+<script>
+    flatpickr("#departure-date", {
+        enableTime: false,
+        dateFormat: "Y-m-d"
+    });
+
+    flatpickr("#time-flight-start", {
+        enableTime: true,
+        noCalendar: true,
+        dateFormat: "H:i",
+        time_24hr: true
+    });
+
+    flatpickr("#time-flight-end", {
+        enableTime: true,
+        noCalendar: true,
+        dateFormat: "H:i",
+        time_24hr: true
+    });
+
+    $("form").on("submit", function() {
+        const startTime = $("#time-flight-start").val();
+        const endTime = $("#time-flight-end").val();
+        const timeFlight = `${startTime}-${endTime}`;
+        $("#time-flight").val(timeFlight);
+    });
+</script>
 <%- include('layout/footer') %>

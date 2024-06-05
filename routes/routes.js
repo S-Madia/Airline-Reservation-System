@@ -4,6 +4,10 @@ const multer = require('multer');
 const User = require('../models/user');
 const Flight = require('../models/flight');
 const bcrypt = require('bcryptjs');
+//method for routecode
+function removeVowels(str) {
+    return str.replace(/[aeiouAEIOU]/g, '');
+}
 // Define routes
 router.get("/", (req, res) => {
     res.render("login");
@@ -101,11 +105,19 @@ router.get('/flightList', async (req, res) => {
     }
 });
 router.post("/addFlight",async (req, res) =>{
+    const startingLocation = req.body.startingLocation;
+        const destination = req.body.destination;
+
+        // Remove vowels and concatenate
+        let routecode = removeVowels(startingLocation).toUpperCase() + '-' + removeVowels(destination).toUpperCase();
+ 
     const flight = new Flight({
-        staringLocation: req.body.staringLocation,
+        startingLocation: req.body.startingLocation,
         destination: req.body.destination,
+        routecode:routecode,
         departure: req.body.departure,
-        return: req.body.return
+        timeFlight: req.body.timeFlight,
+        price: req.body.price
     });
     flight.save()
     .then(() => {
@@ -119,6 +131,34 @@ router.post("/addFlight",async (req, res) =>{
     .catch((err) => {
         res.json({ message: err.message, type: 'danger' });
     });
-})
+});
+
+// Search route
+router.get('/search', async (req, res) => {
+    const { from, to, departureDate, returnDate } = req.query;
+    
+    try {
+        const flights = await Flight.find({
+            startingLocation: from,
+            destination: to,
+            departure: { $gte: new Date(departureDate) }
+        });
+        const returnFlights = await Flight.find({
+            startingLocation: to,
+            destination: from,
+            departure: { $gte: new Date(returnDate) }
+        });
+
+        if (flights.length === 0 && returnFlights.length === 0) {
+            return res.render('flightStatus', { flights: null, returnFlights: null });
+        }
+
+        res.render('flightStatus', { flights, returnFlights }); // Pass both flights and returnFlights
+    } catch (err) {
+        console.error(err);
+        res.status(500).send('Server Error');
+    }
+});
+
 // Export the router
 module.exports = router;
