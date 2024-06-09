@@ -151,16 +151,23 @@ input[type="text"] {
 .searchBtn {
     width: 700px;
     padding: 10px;
-    background-color: #40D3DC;
-    color: white;
-    border: none;
-    border-radius: 5px;
+    color: #30292F;
     cursor: pointer;
     font-size: 16px;
-
+    appearance: none;
+    background-color: #F7B53B;
+    border: 0.125em solid #ffbd43;
+    border-radius: 0.9375em;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    letter-spacing: 1.5px;
     
-
 }
+
 .date-section {
   display: flex;
   flex-direction: column;
@@ -171,7 +178,8 @@ input[type="text"] {
   padding-left: 1rem;
 }
 .searchBtn:hover {
-    background-color: #35b1b8;
+    background-color: #F5A614;
+    font-weight: bolder;
 }
 
 .blogsection h1{
