@@ -47,7 +47,14 @@
       </div>
       <!-- Search form -->
       <div class="search-container">
-        <form action="/search" method="GET">
+        <form action="/search" method="GET" id="search-form">
+            <div class="search-bar">
+                <label for="trip-type">Trip Type:</label>
+                <select id="trip-type" name="tripType" required>
+                    <option value="one-way">One-Way</option>
+                    <option value="round-trip">Round-trip</option>
+                </select>
+            </div>
             <div class="search-bar">
                 <label for="from">From:</label>
                 <input type="text" id="from" name="from" placeholder="Enter starting location" required>
@@ -60,7 +67,7 @@
                 <label for="from-date">Depart:</label>
                 <input type="text" id="from-date" name="departureDate" placeholder="Select Departure Date" required>
             </div>
-            <div class="date-section">
+            <div class="date-section" id="return-date-section">
                 <label for="to-date">Return:</label>
                 <input type="text" id="to-date" name="returnDate" placeholder="Select Return Date">
             </div>

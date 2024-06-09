@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact and Personal Details Form</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Contact and Personal Details Form</h1>
+        <form id="detailsForm" action="/submitDetails" method="POST">
+            <h2>Personal Details</h2>
+            <div class="form-group">
+                <% if (userId) { %>
+                    <p>User ID: <%= userId %></p>
+                <% } else { %>
+                    <p>User ID not found</p>
+                <% } %>
+                <h3>User ID: <%=  userId %></h3>
+                <input type="hidden" id="user" name="user" value="<%= userId %>" />
+            </div>
+            <div class="form-group">
+                <label for="firstname">First Name:</label>
+                <input type="text" class="form-control" id="firstname" name="firstname" required>
+            </div>
+            <div class="form-group">
+                <label for="middleinitial">Middle Initial:</label>
+                <input type="text" class="form-control" id="middleinitial" name="middleinitial">
+            </div>
+            <div class="form-group">
+                <label for="lastname">Last Name:</label>
+                <input type="text" class="form-control" id="lastname" name="lastname" required>
+            </div>
+            <div class="form-group">
+                <label for="suffix">Suffix:</label>
+                <input type="text" class="form-control" id="suffix" name="suffix">
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <input type="text" class="form-control" id="gender" name="gender">
+            </div>
+            <div class="form-group">
+                <label for="birthday">Birthday:</label>
+                <input type="date" class="form-control" id="birthday" name="birthday" required>
+            </div>
+            <fieldset class="form-group">
+                <legend>Address</legend>
+                <div class="form-group">
+                    <label for="street">Street:</label>
+                    <input type="text" class="form-control" id="street" name="street">
+                </div>
+                <div class="form-group">
+                    <label for="city">City:</label>
+                    <input type="text" class="form-control" id="city" name="city">
+                </div>
+                <div class="form-group">
+                    <label for="state">State:</label>
+                    <input type="text" class="form-control" id="state" name="state">
+                </div>
+                <div class="form-group">
+                    <label for="zipCode">Zip Code:</label>
+                    <input type="text" class="form-control" id="zipCode" name="zipCode">
+                </div>
+                <div class="form-group">
+                    <label for="country">Country:</label>
+                    <input type="text" class="form-control" id="country" name="country">
+                </div>
+            </fieldset>
+            <div class="form-group">
+                <label for="nationality">Nationality:</label>
+                <input type="text" class="form-control" id="nationality" name="nationality" required>
+            </div>
+
+            <h2>Contact Details</h2>
+            
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone:</label>
+                <input type="text" class="form-control" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="telno">Telephone:</label>
+                <input type="text" class="form-control" id="telno" name="telno" required>
+            </div>
+            <fieldset class="form-group">
+                <legend>Emergency Contact</legend>
+                <div class="form-group">
+                    <label for="emergencyname">Emergency Contact Name:</label>
+                    <input type="text" class="form-control" id="emergencyname" name="emergencyname">
+                </div>
+                <div class="form-group">
+                    <label for="emergencyno">Emergency Contact Number:</label>
+                    <input type="text" class="form-control" id="emergencyno" name="emergencyno">
+                </div>
+            </fieldset>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

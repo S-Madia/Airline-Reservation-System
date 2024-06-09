@@ -1,3 +1,26 @@
+//One or Round-trip
+document.addEventListener('DOMContentLoaded', function() {
+    var tripTypeSelect = document.getElementById('trip-type');
+    var returnDateSection = document.getElementById('return-date-section');
+
+    function toggleReturnDateSection() {
+        if (tripTypeSelect.value === 'one-way') {
+            returnDateSection.style.display = 'none';
+        } else {
+            returnDateSection.style.display = 'block';
+        }
+    }
+
+    tripTypeSelect.addEventListener('change', toggleReturnDateSection);
+
+    // Initial check to set the correct display state on page load
+    toggleReturnDateSection();
+});
+
+// Initial check to set the correct display state on page load
+document.getElementById('trip-type').dispatchEvent(new Event('change'));
+
+
 // Date picker
 document.addEventListener('DOMContentLoaded', (event) => {
     const fromDateInput = document.getElementById('from-date');
