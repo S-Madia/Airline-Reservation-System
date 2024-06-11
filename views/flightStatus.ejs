@@ -1,61 +1,71 @@
 <%- include('layout/header') %>
-<link
-    rel="stylesheet"
-    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+<style>
+  .flight-card.selected {
+    background-color: lightblue;
+  }
+</style>
 <main>
-    <div class="container mt-5">
-        <h1>Flight Search Results</h1>
-        
-        <h2>Departing Flights</h2>
-        <div class="row">
-            <% if (flights && flights.length > 0) { %>
-                <% flights.forEach(flight => { %>
-                    <div class="col-md-4">
-                        <a href="/guestDetails?flightId=<%= flight._id %>" class="card mb-4 text-decoration-none" style="color: inherit;">
-                            <div class="card-body">
-                                <h2 class="card-title"><%= flight.routecode %></h2>
-                                <p class="card-text"><strong>From:</strong> <%= flight.startingLocation %></p>
-                                <p class="card-text"><strong>To:</strong> <%= flight.destination %></p>
-                                <p class="card-text"><strong>Departure:</strong> <%= flight.departure.toDateString() %></p>
-                                <p class="card-text"><strong>Time:</strong> <%= flight.timeFlight %></p>
-                                <p class="card-text"><strong>Price:</strong> ₱<%= flight.price %></p>
-                            </div>
-                        </a>
-                    </div>
-                <% }) %>
-            <% } else { %>
-                <div class="col-12">
-                    <p>No departing flights found for the given criteria.</p>
-                </div>
-            <% } %>
-        </div>
+  <div class="container mt-5">
+    <h1>Flight Search Results</h1>
 
-        <h2>Returning Flights</h2>
-        <div class="row">
-            <% if (returnFlights && returnFlights.length > 0) { %>
-                <% returnFlights.forEach(flight => { %>
-                    <div class="col-md-4">
-                        <a href="/guestDetails?flightId=<%= flight._id %>" class="card mb-4 text-decoration-none" style="color: inherit;">
-                            <div class="card-body">
-                                <h2 class="card-title"><%= flight.routecode %></h2>
-                                <p class="card-text"><strong>From:</strong> <%= flight.startingLocation %></p>
-                                <p class="card-text"><strong>To:</strong> <%= flight.destination %></p>
-                                <p class="card-text"><strong>Departure:</strong> <%= flight.departure.toDateString() %></p>
-                                <p class="card-text"><strong>Time:</strong> <%= flight.timeFlight %></p>
-                                <p class="card-text"><strong>Price:</strong> ₱<%= flight.price %></p>
-                            </div>
-                        </a>
-                    </div>
-                <% }) %>
-            <% } else { %>
-                <div class="col-12">
-                    <p>No returning flights found for the given criteria.</p>
-                </div>
-            <% } %>
+    <h2>Departing Flights</h2>
+    <div class="row">
+      <% if (flights && flights.length > 0) { %>
+        <% flights.forEach((flight, index) => { %>
+          <div class="col-md-4">
+            <div class="card mb-4 text-decoration-none flight-card departure" style="color: inherit; cursor: pointer;" data-flight-id="<%= flight._id %>">
+              <div class="card-body">
+                <h2 class="card-title"><%= flight.routecode %></h2>
+                <p class="card-text"><strong>From:</strong> <%= flight.startingLocation %></p>
+                <p class="card-text"><strong>To:</strong> <%= flight.destination %></p>
+                <p class="card-text"><strong>Departure:</strong> <%= flight.departure.toDateString() %></p>
+                <p class="card-text"><strong>Time:</strong> <%= flight.timeFlight %></p>
+                <p class="card-text"><strong>Price:</strong> ₱<%= flight.price %></p>
+              </div>
+            </div>
+          </div>
+        <% }) %>
+      <% } else { %>
+        <div class="col-12">
+          <p>No departing flights found for the given criteria.</p>
         </div>
+      <% } %>
     </div>
+
+    <% if (tripType === 'round-trip') { %>
+      <h2>Returning Flights</h2>
+      <div class="row">
+        <% if (returnFlights && returnFlights.length > 0) { %>
+          <% returnFlights.forEach((flight, index) => { %>
+            <div class="col-md-4">
+              <div class="card mb-4 text-decoration-none flight-card return" style="color: inherit; cursor: pointer;" data-flight-id="<%= flight._id %>">
+                <div class="card-body">
+                  <h2 class="card-title"><%= flight.routecode %></h2>
+                  <p class="card-text"><strong>From:</strong> <%= flight.startingLocation %></p>
+                  <p class="card-text"><strong>To:</strong> <%= flight.destination %></p>
+                  <p class="card-text"><strong>Departure:</strong> <%= flight.departure.toDateString() %></p>
+                  <p class="card-text"><strong>Time:</strong> <%= flight.timeFlight %></p>
+                  <p class="card-text"><strong>Price:</strong> ₱<%= flight.price %></p>
+                </div>
+              </div>
+            </div>
+          <% }) %>
+        <% } else { %>
+          <div class="col-12">
+            <p>No returning flights found for the given criteria.</p>
+          </div>
+        <% } %>
+      </div>
+    <% } %>
+    
+    <button id="continueBtn" class="btn btn-primary mt-3">Continue</button>
+  </div>
 </main>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+  var tripType = "<%= tripType %>"; // Pass the tripType variable to JavaScript
+</script>
+<script src="/flight-selection.js"></script>
 <%- include('layout/footer') %>
