@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const contactDetailsSchema = new Schema({
+const paymentDetailsSchema = new Schema({
     transactionID: {
         type: Schema.Types.ObjectId,
         ref: 'transactionID',
@@ -17,12 +17,13 @@ const contactDetailsSchema = new Schema({
         default: null
     },
     amountPayment:{
-        emergencyname:String,
-        emergencyno:String
-
+        type:Number,
+        required: true
     },
     paymentStatus:{
-        type: String,
+        type: Boolean,
         required: true
     }
 });
+
+module.exports = mongoose.model("PaymentDetails", paymentDetailsSchema);
