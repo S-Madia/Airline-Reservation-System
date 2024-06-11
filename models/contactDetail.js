@@ -11,14 +11,17 @@ const contactDetailsSchema = new Schema({
     email:{
         type: String,
         required: true,
+        lowercase: true
     },
     phone:{
         type: String,
         required: true,
+        maxlength: 12
     },
     telno:{
         type: String,
         required: true,
+        maxlength: 12
     },
     emergency:{
         emergencyname:String,
@@ -28,6 +31,7 @@ const contactDetailsSchema = new Schema({
     created:{
         type: Date,
         required: true,
+        immutable: true,
         default:Date.now,
     }
 });

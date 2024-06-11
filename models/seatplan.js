@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const servicesSchema = new Schema({
+const seatplanSchema = new Schema({
     seatID: {
         type: String,
         required: true
@@ -21,4 +21,4 @@ const servicesSchema = new Schema({
     }
 });
 
-module.exports = mongoose.model("Services", servicesSchema);
+module.exports = mongoose.model("Services", seatplanSchema);
