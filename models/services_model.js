@@ -16,7 +16,7 @@ const servicesSchema = new Schema({
     },
     reservationID:{
         type:Schema.Types.ObjectId,
-        ref:"reservationID",
+        ref:"reservation",
         required: true,
     }
 });
