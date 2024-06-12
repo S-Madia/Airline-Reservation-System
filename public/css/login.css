@@ -6,7 +6,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-image: url(images/manila.jpg);
+    background-image: url(/manila.jpg);
     image-rendering: optimizeQuality;
     background-size: cover;
     background-repeat: no-repeat;
@@ -99,52 +99,52 @@ a:hover {
 @keyframes change {
         0%
         {
-            background-image: url(images/manila.jpg);
+            background-image: url(/manila.jpg);
         }
 
         10%
         {
-            background-image: url(images/boracay.jpg);
+            background-image: url(/boracay.jpg);
         }
 
         20%
         {
-            background-image: url(images/bohol.jpg);
+            background-image: url(/bohol.jpg);
         }
         30%
         {
-            background-image: url(images/visayas.jpg);
+            background-image: url(/visayas.jpg);
         }
 
         40%
         {
-            background-image: url(images/banawe.jpg);
+            background-image: url(/banawe.jpg);
         }
         50%
         {
-            background-image: url(images/batanes.jpg);
+            background-image: url(/batanes.jpg);
         }
 
         60%
         {
-            background-image: url(images/panay.jpg);
+            background-image: url(/panay.jpg);
         }
         70%
         {
-            background-image: url(images/batangas.jpg);
+            background-image: url(/batangas.jpg);
         }
 
         80%
         {
-            background-image: url(images/iloilo.jpg);
+            background-image: url(/iloilo.jpg);
         } 90%
         {
-            background-image: url(images/trike.jpg);
+            background-image: url(/trike.jpg);
         }
 
         100%
         {
-            background-image: url(images/apo.jpg);
+            background-image: url(/apo.jpg);
         }
 
 }
