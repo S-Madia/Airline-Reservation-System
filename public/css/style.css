@@ -19,9 +19,7 @@ h3 h1{
   width: 100%;
 }
 header{
-
     width: 100%;
-    position: fixed;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -32,7 +30,7 @@ header{
 }
 nav{
     width: auto;
-    height: 50px;
+    height: 75px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -101,20 +99,21 @@ nav ul li a{
 /* sub header */
 
 .subHeader{
-    width: auto;
-    height: 540px;
-    background-color: grey;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    background-image: url(https://images.unsplash.com/photo-1559305289-4c31700ba9cb?q=80&w=1546&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D) ;
-    background-size: cover;
-    padding: 20px;
-    
-    
+    position: relative;
+    width: 100%;
+    height: 550px;
+    overflow: hidden;
+    /* background-color: grey; */
+    /* background-image: url(https://images.unsplash.com/photo-1559305289-4c31700ba9cb?q=80&w=1546&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D) ; */
+    background-size: cover;  
 }
 
-  
-  .search-container {
+.carousel-item img {
+  width: 100%;
+  height: 550px;
+  object-fit: cover;
+}
+.search-container {
     display: flex;
     flex-wrap: wrap;
     padding: 20px;
@@ -189,11 +188,6 @@ input[type="text"] {
     font-weight: bolder;
 }
 
-.blogsection h1{
-display: flex;
-justify-content: center;
-padding: 20px;
-}
 .card-container{
   display: flex;
   flex-wrap: wrap;
@@ -215,17 +209,18 @@ padding: 20px;
   color: #FAFFEB;
 }
 
+
 .rmButt{
   padding: 12px 24px;
-  border: 1.5px solid #eeb808;
+  border: 1.5px solid #6d9cee;
   border-radius: 4px;
   transition: all 0.2s ease-in;
   position: relative;
   overflow: hidden;
   font-size: 13px;
   cursor: pointer;
-  color: black;
-  background-color: #ffffff;
+  color: whitesmoke;
+  background-color: #5986d4;
   z-index: 1;
   font-weight: bold;
   margin-top: 10px;
@@ -403,5 +398,21 @@ footer{
   background-color: #325185;
   transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
   font-weight: bolder;
+}
+
+@media (max-width: 600px) {
+  body {
+      padding-right: 1em; /* Reduce padding for smaller screens */
+  }
+
+  .form-container {
+      width: 100%; /* Make the form container take full width on small screens */
+      max-width: 300px; /* Optional: limit max width */
+  }
+
+  input[type="text"],
+  input[type="password"] {
+      width: 100%; /* Make inputs take full width on small screens */
+  }
 }
 

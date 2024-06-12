@@ -34,6 +34,7 @@ app.use(express.static("uploads"));
 app.use(express.static("public/css"));
 app.use(express.static("public/js"));
 app.use(express.static("public/images"));
+app.use(express.static("views/carousel items"));
 // Set template engine
 app.set("view engine", "ejs");
 
