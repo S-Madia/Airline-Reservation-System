@@ -164,12 +164,17 @@ router.get('/search', async (req, res) => {
             });
         }
 
-        res.render('flightStatus', { flights: flights.length ? flights : null, returnFlights: returnFlights.length ? returnFlights : null });
+        res.render('flightStatus', {
+            flights: flights.length ? flights : null,
+            returnFlights: returnFlights.length ? returnFlights : null,
+            tripType
+        });
     } catch (err) {
         console.error(err);
         res.status(500).send('Server Error');
     }
 });
+
 
 //Create a new ContactDetails PersonalDetails document
 router.post("/submitDetails", async (req, res) => {

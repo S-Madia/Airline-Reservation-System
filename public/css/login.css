@@ -1,0 +1,166 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url(/manila.jpg);
+    image-rendering: optimizeQuality;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    animation: change 100s infinite ease-in-out;
+}
+.container{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:"overlap" ;
+    
+}
+.item2{
+    grid-area: overlap;
+}
+/* .item1{
+    width: 100%;
+    height: 100%;
+    background-color: aqua;
+    grid-area: overlap;
+} */
+.form-container {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    background: rgba(255, 255, 255, 0.88);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(9.7px);
+    -webkit-backdrop-filter: blur(9.7px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: calc(100% - 10px);
+    padding: 8px;
+    margin: 5px 0 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 10px;
+    background-color:#F7B53B;
+    color: white;
+    border: 1px solid #F7B53B;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: large;
+    letter-spacing: 1.25px;
+}
+
+.submit-btn:hover {
+    background-color: #ffffff;
+    color: #F7B53B;
+    font-weight: bolder;
+}
+
+p {
+    text-align: center;
+}
+
+a {
+    color: cornflowerblue;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+@keyframes change {
+        0%
+        {
+            background-image: url(/manila.jpg);
+        }
+
+        10%
+        {
+            background-image: url(/boracay.jpg);
+        }
+
+        20%
+        {
+            background-image: url(/bohol.jpg);
+        }
+        30%
+        {
+            background-image: url(/visayas.jpg);
+        }
+
+        40%
+        {
+            background-image: url(/banawe.jpg);
+        }
+        50%
+        {
+            background-image: url(/batanes.jpg);
+        }
+
+        60%
+        {
+            background-image: url(/panay.jpg);
+        }
+        70%
+        {
+            background-image: url(/batangas.jpg);
+        }
+
+        80%
+        {
+            background-image: url(/iloilo.jpg);
+        } 90%
+        {
+            background-image: url(/trike.jpg);
+        }
+
+        100%
+        {
+            background-image: url(/apo.jpg);
+        }
+
+}
+
+@media (max-width: 600px) {
+    body {
+        padding-right: 1em; /* Reduce padding for smaller screens */
+    }
+
+    .form-container {
+        width: 100%; /* Make the form container take full width on small screens */
+        max-width: 300px; /* Optional: limit max width */
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        width: 100%; /* Make inputs take full width on small screens */
+    }
+}
