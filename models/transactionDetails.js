@@ -24,6 +24,11 @@ const transactDetailsSchema = new Schema({
         type: Number,
         default: null
 
+    },
+    payment_id:{
+        type: Schema.Types.ObjectId,
+        ref: "paymentDetails",
+        required: true
     }
 });
 

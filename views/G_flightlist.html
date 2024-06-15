@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight List</title>
+    <link rel="stylesheet" href="/public/css/G_flightlist.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <div class="header_content">
+            <a href="#" class="logo">AIRPLANE</a>
+            <nav>
+                <ul class="navbar">
+                    <li><a href="#book" class="nav_link">BOOK</a></li>
+                    <li><a href="#manage" class="nav_link">MANAGE</a></li>
+                    <li><a href="#infotravel" class="nav_link">INFO TRAVEL</a></li>
+                    <li><a href="#explore" class="nav_link">EXPLORE</a></li>
+                    <li><a href="#aboutus" class="nav_link">ABOUT US</a></li>
+                </ul>
+            </nav>
+            <a href="#button" class="btn">Log In</a>
+        </div>
+    </header>
+    <main>
+        <div class="booked_cont">
+            <div class="cont1">
+                <div class="depart">
+                    <ul>
+                        <li class="id1">Departing Flight</li>
+                        <li class="id2">MNL To CBU</li>
+                        <li class="id3">23 JUL to 24 JUL</li>
+                    </ul>
+                </div>
+                <div class="return">
+                    <ul>
+                        <li class="id1">Returning Flight</li>
+                        <li class="id2">MNL To CBU</li>
+                        <li class="id3">23 JUL to 24 JUL</li>
+                    </ul>
+                </div>
+                <div class="guestcount">
+                    <ul>
+                        <li class="id1">Guest</li>
+                        <li class="id2">1 adult</li>
+                        <li class="id3">special needs</li>
+                    </ul>
+                </div>
+                <div class="edit_details">
+                    <button class="Btn">Edit Flight
+                        <svg class="svg" viewBox="0 0 512 512">
+                            <path d="M410.3 231l11.3-11.3-33.9-33.9-62.1-62.1L291.7 89.8l-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L387.7 253.7 410.3 231zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9L59.4 452l23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7L348.3 33.2 325.7 55.8 314.3 67.1l33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5L453.3 18.7c-25-25-65.5-25-90.5 0zm-47.4 168l-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div> 
+        </div>
+        
+        <div class="cont2">
+            <div class="progress-bar">
+                <div class="step completed">
+                    <div class="circle"><i class="fas fa-plane-departure"></i></div>
+                    <div class="label">Flights</div>
+                </div>
+                <div class="step">
+                    <div class="circle"><i class="fas fa-user"></i></div>
+                    <div class="label">Guest Details</div>
+                </div>
+                <div class="step">
+                    <div class="circle"><i class="fas fa-briefcase"></i></div>
+                    <div class="label">Add-ons</div>
+                </div>
+                <div class="step">
+                    <div class="circle"><i class="fas fa-credit-card"></i></div>
+                    <div class="label">Payment</div>
+                </div>
+                <div class="step">
+                    <div class="circle"><i class="fas fa-check-circle"></i></div>
+                    <div class="label">Confirmation</div>
+                </div>
+            </div>
+        </div>
+
+        <h6>Select Your Departing Flight</h6>
+        <div class="dep_cont">
+            <div>
+                <h4>MANILA <span>MNL</span></h4>
+            </div>
+            <div>
+                <i class="fa-solid fa-plane" style="color: #104dda;"></i>
+            </div>
+            <div>
+                <h4>CEBU <span>CBU</span></h4>
+            </div>
+        </div>
+
+        <div class="card_cont">
+            <div class="card">
+                Click me
+            </div>
+        </div>
+    </main>
+</body>
+</html>

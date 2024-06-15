@@ -1,0 +1,343 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100..900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    list-style: none;
+    text-decoration: none;
+}
+
+header {
+    width: 100%;
+    position: fixed;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2px;
+    background-color: #1A2061;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: "Roboto Condensed", sans-serif;
+    z-index: 1000; /* Ensure header is always on top */
+}
+
+.header_content {
+    width: auto;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 4em;
+}
+
+.logo {
+    color: #e8f0f7;
+    font-weight: 600;
+    font-size: 2.4rem;
+}
+
+.navbar {
+    display: flex;
+    column-gap: 40px;
+    list-style-type: none;
+    padding: 0 20px;
+    margin: 0;
+}
+
+.navbar a {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 1.1rem;
+    padding: 0 20px;
+    font-weight: 500;
+}
+
+.navbar a:hover,
+.navbar a:focus {
+    color: white;
+    transition: .4s;
+}
+
+.nav_link {
+    position: relative;
+}
+
+.nav_link::after {
+    content: '';
+    height: 2px;
+    width: 100%;
+    background-color: rgb(185, 216, 228);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transition: all 0.2s;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.nav_link:hover::after {
+    opacity: 1;
+}
+
+.btn {
+    color: #fff;
+    background-color: #0071e3;
+    padding: 9px 20px;
+    border-radius: 1000px;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: bolder;
+}
+
+.btn-effect {
+    box-shadow: inset 0px 0px 0px 0px cornflowerblue;
+    transition: ease-out 0.4s;
+    outline: none;
+}
+
+.btn:hover {
+    box-shadow: inset 250px 0px 0px 0px cornflowerblue;
+    cursor: pointer;
+    color: black;
+}
+
+.booked_cont {
+    width: 100%;
+    height: auto;
+    display: flex;
+    gap: 0 2em;
+    padding-top: 7em;
+}
+
+.cont1 {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-shrink: inherit;
+    gap: 0 2em;
+    padding: 0 15em;
+    justify-content: space-evenly;
+    font-family: 'Noto Sans', sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.edit_details {
+    /* Add specific styles if needed */
+}
+
+.cont1 ul {
+    line-height: 1.4em;
+}
+
+.id1 {
+    font-size: smaller;
+    color: gray;
+}
+
+.id2 {
+    font-weight: bold;
+}
+
+.id3 {
+    font-size: small;
+}
+
+.Btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 120px;
+    height: 40px;
+    border: none;
+    padding: 0px 20px;
+    background-color: #F5A614;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 5px 5px 0px #be8823;
+    transition-duration: .3s;
+    font-family: "Roboto Condensed", sans-serif;
+}
+
+.svg {
+    width: 13px;
+    position: absolute;
+    right: 0;
+    margin-right: 20px;
+    fill: white;
+    transition-duration: .3s;
+}
+
+.Btn:hover {
+    color: transparent;
+}
+
+.Btn:hover .svg {
+    right: 43%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    transition-duration: .3s;
+}
+
+.Btn:active {
+    transform: translate(3px , 3px);
+    transition-duration: .3s;
+    box-shadow: 2px 2px 0px #be8823;
+}
+
+.cont2 {
+    margin-top: 2.5rem;
+    width: 100%;
+    height: 180px;
+    background-color: #F5A614;
+}
+
+.dep_cont {
+    display: flex;
+    flex: inherit;
+    gap: 1.5em;
+    padding-left: 2em;
+    font-size: x-large;
+}
+
+h6 {
+    font-family: 'Noto Sans', sans-serif;
+    color: gray;
+    font-size: medium;
+    margin-top: 2rem;
+    margin-left: 2em;
+}
+
+.card_cont {
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.card {
+    box-sizing: border-box;
+    width: 75%;
+    height: 150px;
+    background: rgba(217, 217, 217, 0.58);
+    border: 2px solid #0071e3;
+    box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
+    backdrop-filter: blur(6px);
+    border-radius: 17px;
+    text-align: center;
+    cursor: pointer;
+    justify-content: center;
+    transition: all 0.5s;
+    display: flex;
+    align-items: center;
+    user-select: none;
+    font-weight: bolder;
+    color: black;
+    margin-top: 1rem;
+}
+
+.card:hover {
+    border: 2px solid #F5A614;
+    box-shadow: 12px 17px 51px #F5A614;
+    transform: scale(1.05);
+}
+
+.progress-bar {
+    display: flex;
+    align-items: center;
+    background-color: #F5A614;
+    padding: 1em 2em;
+    border-radius: 25px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.step {
+    text-align: center;
+    flex: 1;
+    position: relative;
+}
+
+.step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -50%;
+    width: 100%;
+    height: 2px;
+    background: #e8f0f7;
+    z-index: -1;
+    transform: translateY(-50%);
+}
+
+.circle {
+    width: 50px;
+    height: 50px;
+    background-color: #1A2061;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 1.5rem;
+    margin: 0 auto;
+}
+
+.label {
+    margin-top: 10px;
+    font-weight: 700;
+    color: #1A2061;
+}
+
+.completed .circle {
+    background-color: #0071e3;
+}
+
+.completed .label {
+    color: #0071e3;
+}
+
+
+
+
+
+
+@media (max-width: 600px) {
+    .cont1 {
+        padding: 0 1em;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cont1 ul {
+        padding: 0;
+        margin: 0;
+    }
+
+    .edit_details .Btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .dep_cont {
+        flex-direction: column;
+        align-items: center;
+        padding-left: 0;
+    }
+
+    .card_cont {
+        width: 100%;
+    }
+
+    .card {
+        width: 90%;
+    }
+}
+
