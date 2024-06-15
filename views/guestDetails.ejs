@@ -1,112 +1,508 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact and Personal Details Form</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Details Form</title>
     <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+   <link rel="stylesheet" href="/formNavigator.css">
+   <script async src="/formNavigator.js"></script>
+    <style>
+      .additional-info {
+        display: none;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
     <div class="container mt-5">
-        <h1 class="mb-4">Contact and Personal Details Form</h1>
-        <form id="detailsForm" action="/submitDetails" method="POST">
-            <h2>Personal Details</h2>
+      <h1 class="mb-4">Details Form</h1>
+      <form id="detailsForm" action="/submitDetails" method="POST">
+        <!-- Start of 1st Form -->
+        <div id="firstForm">
+          <h2>Personal Details</h2>
+          <div class="form-group">
+            <label for="firstname">First Name:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="firstname"
+              name="firstname"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="middleinitial">Middle Initial:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="middleinitial"
+              name="middleinitial"
+            />
+          </div>
+          <div class="form-group">
+            <label for="lastname">Last Name:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="lastname"
+              name="lastname"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="suffix">Suffix:</label>
+            <input type="text" class="form-control" id="suffix" name="suffix" />
+          </div>
+          <div class="form-group">
+            <label for="gender">Gender:</label>
+            <select name="gender" id="gender" class="form-control">
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="birthday">Birthday:</label>
+            <input
+              type="date"
+              class="form-control"
+              id="birthday"
+              name="birthday"
+              required
+            />
+          </div>
+          <fieldset class="form-group">
+            <legend>Address</legend>
             <div class="form-group">
-                <% if (userId) { %>
-                    <p>User ID: <%= userId %></p>
-                <% } else { %>
-                    <p>User ID not found</p>
-                <% } %>
-                <h3>User ID: <%=  userId %></h3>
-                <input type="hidden" id="user" name="user" value="<%= userId %>" />
+              <label for="street">Street:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="street"
+                name="street"
+              />
             </div>
             <div class="form-group">
-                <label for="firstname">First Name:</label>
-                <input type="text" class="form-control" id="firstname" name="firstname" required>
+              <label for="city">City:</label>
+              <input type="text" class="form-control" id="city" name="city" />
             </div>
             <div class="form-group">
-                <label for="middleinitial">Middle Initial:</label>
-                <input type="text" class="form-control" id="middleinitial" name="middleinitial">
+              <label for="state">State:</label>
+              <input type="text" class="form-control" id="state" name="state" />
             </div>
             <div class="form-group">
-                <label for="lastname">Last Name:</label>
-                <input type="text" class="form-control" id="lastname" name="lastname" required>
+              <label for="zipCode">Zip Code:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="zipCode"
+                name="zipCode"
+              />
             </div>
             <div class="form-group">
-                <label for="suffix">Suffix:</label>
-                <input type="text" class="form-control" id="suffix" name="suffix">
+              <label for="country">Country:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="country"
+                name="country"
+              />
             </div>
-            <div class="form-group">
-                <label for="gender">Gender:</label>
-                <select name="gender" id="gender">
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="birthday">Birthday:</label>
-                <input type="date" class="form-control" id="birthday" name="birthday" required>
-            </div>
-            <fieldset class="form-group">
-                <legend>Address</legend>
-                <div class="form-group">
-                    <label for="street">Street:</label>
-                    <input type="text" class="form-control" id="street" name="street">
-                </div>
-                <div class="form-group">
-                    <label for="city">City:</label>
-                    <input type="text" class="form-control" id="city" name="city">
-                </div>
-                <div class="form-group">
-                    <label for="state">State:</label>
-                    <input type="text" class="form-control" id="state" name="state">
-                </div>
-                <div class="form-group">
-                    <label for="zipCode">Zip Code:</label>
-                    <input type="text" class="form-control" id="zipCode" name="zipCode">
-                </div>
-                <div class="form-group">
-                    <label for="country">Country:</label>
-                    <input type="text" class="form-control" id="country" name="country">
-                </div>
-            </fieldset>
-            <div class="form-group">
-                <label for="nationality">Nationality:</label>
-                <input type="text" class="form-control" id="nationality" name="nationality" required>
-            </div>
+          </fieldset>
+          <div class="form-group">
+            <label for="nationality">Nationality:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="nationality"
+              name="nationality"
+              required
+            />
+          </div>
 
-            <h2>Contact Details</h2>
-            
+          <h2>Contact Details</h2>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              name="email"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone:</label>
+            <input
+              type="tel"
+              class="form-control"
+              id="phone"
+              name="phone"
+              maxlength="10"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="telno">Telephone:</label>
+            <input
+              type="tel"
+              class="form-control"
+              id="telno"
+              name="telno"
+              maxlength="8"
+              required
+            />
+          </div>
+          <fieldset class="form-group">
+            <legend>Emergency Contact</legend>
             <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" class="form-control" id="email" name="email" required>
+              <label for="emergencyname">Emergency Contact Name:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="emergencyname"
+                name="emergencyname"
+              />
             </div>
             <div class="form-group">
-                <label for="phone">Phone:</label>
-                <input type="tel" class="form-control" id="phone" name="phone" maxlength="10" required >
+              <label for="emergencyno">Emergency Contact Number:</label>
+              <input
+                type="tel"
+                class="form-control"
+                id="emergencyno"
+                name="emergencyno"
+                maxlength="10"
+              />
             </div>
-            <div class="form-group">
-                <label for="telno">Telephone:</label>
-                <input type="tel" class="form-control" id="telno" name="telno"  maxlength="8" required>
+          </fieldset>
+        
+        </div>
+        <!-- End of 1st Form -->
+        <!-- Start of 2nd Form -->
+        <div id="secondForm">
+          <h2>Service</h2>
+          <div class="form-group">
+            <label for="service">Service:</label>
+            <select name="service" id="service" class="form-control">
+              <option value="basic">Go Basic</option>
+              <option value="easy">Go Easy</option>
+              <option value="flexi">Go Flexi</option>
+            </select>
+          </div>
+        </div>
+        <!-- End of 2nd Form -->
+        <!-- Start of 3rd Form -->
+        <div id="thirdForm">
+          <h2>Seat Plan</h2>
+          <div class="form-group">
+            <label for="seat">Selected Seat:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="seat"
+              name="seat"
+              readonly
+            />
+            <button
+              type="button"
+              class="btn btn-secondary mt-2"
+              data-toggle="modal"
+              data-target="#seatModal"
+            >
+              Pick a Seat
+            </button>
+          </div>
+          <div class="form-group">
+            <label for="travelclass">Travel Class:</label>
+            <select class="form-control" name="travelclass" id="travelclass">
+              <option value="Economy">Economy</option>
+              <option value="Business">Business</option>
+            </select>
+          </div>
+        </div>
+        <!-- End of 3rd Form -->
+
+        <!-- Summary -->
+        <div id="summaryForm"class="booking-summary mt-4">
+          <h2>Booking Summary</h2>
+          <!-- Summary details will be dynamically added here using JavaScript -->
+        </div>
+
+        <!-- /Summary -->
+        <div id="paymentForm">
+          <!-- Credit or Debit Card Section -->
+          <h2>Payment Mode</h2>
+          <div class="card mb-4">
+            <div class="card-header bg-warning text-white">
+              Credit or Debit Card
             </div>
-            <fieldset class="form-group">
-                <legend>Emergency Contact</legend>
-                <div class="form-group">
-                    <label for="emergencyname">Emergency Contact Name:</label>
-                    <input type="text" class="form-control" id="emergencyname" name="emergencyname">
-                </div>
-                <div class="form-group">
-                    <label for="emergencyno">Emergency Contact Number:</label>
-                    <input type="tel" class="form-control" id="emergencyno" name="emergencyno" maxlength="10">
-                </div>
-            </fieldset>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+            <div class="card-body">
+              <div class="form-check">
+                <input
+                  class="form-check-input payment-method"
+                  type="radio"
+                  name="paymentMethod"
+                  id="creditCard"
+                  value="creditCard"
+                />
+                <label class="form-check-label" for="creditCard">
+                  Credit, Debit, or Prepaid Cards
+                </label>
+              </div>
+              <div class="mt-3">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/a/a4/AMEX-logo-transparent.png"
+                  alt="AMEX"
+                  width="50"
+                  class="mr-2"
+                />
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/UnionPay_logo.svg/1200px-UnionPay_logo.svg.png"
+                  alt="UnionPay"
+                  width="50"
+                  class="mr-2"
+                />
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/4/41/Mastercard-logo.svg"
+                  alt="MasterCard"
+                  width="50"
+                  class="mr-2"
+                />
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg"
+                  alt="Visa"
+                  width="50"
+                  class="mr-2"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- e-Wallet Section -->
+          <div class="card">
+            <div class="card-header bg-warning text-white">e-Wallet</div>
+            <div class="card-body">
+              <div class="form-check">
+                <input
+                  class="form-check-input payment-method"
+                  type="radio"
+                  name="paymentMethod"
+                  id="paypal"
+                  value="paypal"
+                />
+                <label class="form-check-label" for="paypal">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg"
+                    alt="PayPal"
+                    width="70"
+                  />
+                </label>
+              </div>
+              <div class="form-check mt-2">
+                <input
+                  class="form-check-input payment-method"
+                  type="radio"
+                  name="paymentMethod"
+                  id="grabPay"
+                  value="grabPay"
+                />
+                <label class="form-check-label" for="grabPay">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/3/36/Grab_Logo.svg"
+                    alt="GrabPay"
+                    width="70"
+                  />
+                </label>
+              </div>
+              <div class="form-check mt-2">
+                <input
+                  class="form-check-input payment-method"
+                  type="radio"
+                  name="paymentMethod"
+                  id="maya"
+                  value="maya"
+                />
+                <label class="form-check-label" for="maya">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Maya_Logo.png"
+                    alt="Maya"
+                    width="70"
+                  />
+                </label>
+              </div>
+              <div class="form-check mt-2">
+                <input
+                  class="form-check-input payment-method"
+                  type="radio"
+                  name="paymentMethod"
+                  id="gcash"
+                  value="gcash"
+                />
+                <label class="form-check-label" for="gcash">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/4/4b/GCash_Logo.svg"
+                    alt="GCash"
+                    width="70"
+                  />
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Additional Information Section -->
+          <div id="additional-info" class="additional-info card">
+            <div><img src="" alt="" id="icon" /></div>
+            <div class="card-body">
+              <div class="form-group">
+                <label for="totalAmount">Total Amount</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="totalAmount"
+                  name="totalAmount"
+                />
+              </div>
+              <div class="form-group">
+                <label for="amountOfPayment">Amount of Payment</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="amountOfPayment"
+                  name="amountOfPayment"
+                />
+              </div>
+              <div class="form-group">
+                <label for="transactionId">Transaction ID</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="transactionId"
+                  name="transactionId"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Navigation buttons -->
+        <div class="mt-4">
+          <button type="button" class="btn btn-primary" onclick="navigate('previous')">Previous</button>
+          <button type="button" class="btn btn-primary" onclick="navigate('next')">Next</button>
+        </div>
+
+        <button type="submit" class="btn btn-primary mt-4" id="submitButton">Submit</button>
+      </form>
     </div>
+
+    <!-- Seat Picker Modal -->
+    <div
+      class="modal fade"
+      id="seatModal"
+      tabindex="-1"
+      aria-labelledby="seatModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="seatModalLabel">Pick a Seat</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="seat-plan">
+              <div class="row">
+                <div class="col-md-4 seat available" data-seat="A1">A1</div>
+                <div class="col-md-4 seat available" data-seat="A2">A2</div>
+                <div class="col-md-4 seat available" data-seat="A3">A3</div>
+              </div>
+              <div class="row">
+                <div class="col-md-4 seat available" data-seat="B1">B1</div>
+                <div class="col-md-4 seat available" data-seat="B2">B2</div>
+                <div class="col-md-4 seat available" data-seat="B3">B3</div>
+              </div>
+              <div class="row">
+                <div class="col-md-4 seat available" data-seat="C1">C1</div>
+                <div class="col-md-4 seat available" data-seat="C2">C2</div>
+                <div class="col-md-4 seat available" data-seat="C3">C3</div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              id="saveSeatSelection"
+            >
+              Save
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Bootstrap JS, Popper.js, and jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
+    <script>
+      $(document).ready(function () {
+        $(".seat.available").click(function () {
+          $(".seat").removeClass("selected");
+          $(this).addClass("selected");
+        });
+
+        $("#saveSeatSelection").click(function () {
+          const selectedSeat = $(".seat.selected").data("seat");
+          $("#seat").val(selectedSeat);
+          $("#seatModal").modal("hide");
+        });
+
+        // Function to update the booking summary
+        function updateBookingSummary() {
+          const summary = `
+          <h2>Booking Summary</h2>
+                    <p><strong>Personal Details:</strong></p>
+                    <ul>
+                        <li>First Name: ${$("#firstname").val()}</li>
+                        <!-- Add more personal details as needed -->
+                    </ul>
+                    <p><strong>Service:</strong></p>
+                    <p>${$("#service").val()}</p>
+                    <p><strong>Seat Plan:</strong></p>
+                    <p>Selected Seat: ${$("#seat").val()}</p>
+                    <p>Travel Class: ${$("#travelclass").val()}</p>
+                    <!-- Add more seat plan details as needed -->
+                `;
+          $(".booking-summary").html(summary);
+        }
+
+        // Call the function to update the booking summary on document ready
+        updateBookingSummary();
+
+        // Call the function to update the booking summary whenever there's a change in form fields
+        $("form").on("input", function () {
+          updateBookingSummary();
+        });
+      });
+    </script>
+    <script src="/paymentMode.js"></script>
+  </body>
 </html>

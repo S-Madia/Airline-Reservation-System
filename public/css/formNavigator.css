@@ -1,0 +1,6 @@
+#firstForm{
+    display: block;
+}
+#secondForm,#thirdForm,#summaryForm,#paymentForm,#submitButton{
+    display: none;
+}

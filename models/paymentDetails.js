@@ -7,10 +7,6 @@ const paymentDetailsSchema = new Schema({
         ref: 'transactionDetails',
         required: true
     },
-    paymentID:{
-        type: String,
-        required: true,
-    },
     paymentDue:{
         type: Date,
         required: true,

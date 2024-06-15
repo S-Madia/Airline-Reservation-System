@@ -41,5 +41,6 @@ $(function() {
                 alert('Please select a departure flight.');
             }
         }
+       
     });
 });
