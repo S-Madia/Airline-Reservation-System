@@ -31,34 +31,6 @@ document.addEventListener('DOMContentLoaded', function() {
             fromDateInput._flatpickr.set('maxDate', dateStr);
         }
     });
-
-    var cities = [
-        "Manila", "Quezon City", "Caloocan", "Las Piñas", "Makati", "Malabon", "Mandaluyong",
-        "Marikina", "Muntinlupa", "Navotas", "Parañaque", "Pasay", "Pasig", "San Juan",
-        "Taguig", "Valenzuela", "Cebu City", "Mandaue", "Lapu-Lapu", "Davao City",
-        "Zamboanga City", "Antipolo", "Bacolod", "Baguio", "Cabanatuan", "Cagayan de Oro",
-        "Calamba", "Dagupan", "Dasmariñas", "General Santos", "Iligan", "Iloilo City",
-        "Lipa", "Lucena", "Mabalacat", "Malolos", "Meycauayan", "Olongapo", "San Carlos",
-        "San Fernando", "San Jose del Monte", "Santa Rosa", "Santiago", "Tarlac City",
-        "Tuguegarao", "Urdaneta", "Angeles", "Batangas City", "Butuan", "Cabanatuan",
-        "Calbayog", "Cavite City", "Cotabato City", "Dumaguete", "Escalante", "Gapan",
-        "Gingoog", "Iriga", "Isabela", "Kabankalan", "Kidapawan", "Koronadal", "La Carlota",
-        "Lamitan", "Legazpi", "Ligao", "Maasin", "Malaybalay", "Marawi", "Masbate City",
-        "Mati", "Murcia", "Naga", "Ormoc", "Oroquieta", "Ozamis", "Pagadian", "Palayan",
-        "Panabo", "Passi", "Puerto Princesa", "Roxas", "Sagay", "Samal", "San Jose",
-        "San Pablo", "Silay", "Sipalay", "Sorsogon City", "Surigao City", "Tabaco",
-        "Tabuk", "Tacloban", "Tacurong", "Tagaytay", "Tagbilaran", "Tangub", "Tanjay",
-        "Tarlac City", "Toledo", "Trece Martires", "Tuguegarao", "Valencia", "Victorias",
-        "Vigan", "Zamboanga City"
-    ];
-
-    $("#from").autocomplete({
-        source: cities
-    });
-
-    $("#to").autocomplete({
-        source: cities
-    });
 });
 
 
@@ -79,5 +51,36 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize the form to hide the return date if one-way is selected by default
     toggleReturnDateSection();
   });
+
+// Autocomplete Function
+// Will Change cities next time
+  document.addEventListener('DOMContentLoaded', function(){
+        const fromport = document.querySelector("#from_airport");
+        const toport = document.querySelector("#to_airport");
+        const cities = [
+            "Pampanga", "Davao", "Iloilo", "Aklan",
+            "Ilocos Norte", "Lapu-Lapu City", "Pasay/Parañaque",
+            "Puerto Princesa", "Silay", "Daraga", "Panglao",
+            "Butuan", "Cauayan", "Datu Odin Sinsuat", "Tacloban",
+            "Dipolog", "Sibulan", "General Santos", "Malay / Nabas",
+            "Ozamiz", "Languindingan", "Pili", "Pagadian", "Roxas",
+            "Bongao", "San Jose", "Morong", "Tuguegarao", "Zamboanga City",
+            "Basco", "Calbayog", "Mambajao", "Catarman", "Magsaysay",
+            "San Jose de Buenavista", "Coron", "Jolo", "Baguio",
+            "Gasan", "Masbate City", "Ormoc", "Cavite City", "San Vicente",
+            "Del Carmen", "Surigao City", "Tandag", "Alcantara", "Virac"
+        ];
+    
+        const dlist = document.createElement("datalist");
+        const opval = document.createElement("option");
+        dlist.setAttribute("id", "airport")
+        fromport.insertAdjacentElement("afterend", dlist);
+        toport.insertAdjacentElement("afterend", dlist.cloneNode(true));
+        
+        for(let i=0; i < cities.length; i++){
+            opval.setAttribute("value", cities[i]);
+            dlist.appendChild(opval.cloneNode(true));
+        }
+  })
 
   
