@@ -1,6 +1,14 @@
 #firstForm{
     display: block;
 }
-#secondForm,#thirdForm,#summaryForm,#paymentForm,#submitButton{
+#secondForm,#thirdForm,#summaryForm,#paymentForm,#submitButton,
+.flightId,.hide{
     display: none;
 }
+.additional-info {
+    display: none;
+    margin-top: 20px;
+  }
+  .flight-card.selected {
+    background-color: lightblue;
+  }

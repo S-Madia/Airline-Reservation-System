@@ -17,9 +17,9 @@ const reservationDetailsSchema = new Schema({
         ref: 'seatplan',
         required: true
     },
-    paymentID: {
+    transactionID: {
         type: Schema.Types.ObjectId,
-        ref: 'paymentDetails',
+        ref: 'transactionDetails',
         required: true
     },
     flightType:{

@@ -11,17 +11,24 @@
     />
    <link rel="stylesheet" href="/formNavigator.css">
    <script async src="/formNavigator.js"></script>
-    <style>
-      .additional-info {
-        display: none;
-        margin-top: 20px;
-      }
-    </style>
+   <script async src="/paymentMode.js"></script>
+   <script async type="module" src="/getFlightInfo.js"></script>
+   
+   <script async type="module" src="/flightParam.js"></script>
   </head>
   <body>
     <div class="container mt-5">
       <h1 class="mb-4">Details Form</h1>
       <form id="detailsForm" action="/submitDetails" method="POST">
+        <div class="form-group hide">
+          <% if (userId) { %>
+              <p>User ID: <%= userId %></p>
+          <% } else { %>
+              <p>User ID not found</p>
+          <% } %>
+          <h3>User ID: <%=  userId %></h3>
+          <input type="hidden" id="user" name="user" value="<%= userId %>" />
+      </div>
         <!-- Start of 1st Form -->
         <div id="firstForm">
           <h2>Personal Details</h2>
@@ -187,10 +194,10 @@
           <h2>Service</h2>
           <div class="form-group">
             <label for="service">Service:</label>
-            <select name="service" id="service" class="form-control">
-              <option value="basic">Go Basic</option>
-              <option value="easy">Go Easy</option>
-              <option value="flexi">Go Flexi</option>
+            <select name="service" id="service" name = "service" class="form-control">
+              <option value="Go Basic">Go Basic</option>
+              <option value="Go Easy">Go Easy</option>
+              <option value="Go Flexi">Go Flexi</option>
             </select>
           </div>
         </div>
@@ -227,9 +234,37 @@
         <!-- End of 3rd Form -->
 
         <!-- Summary -->
-        <div id="summaryForm"class="booking-summary mt-4">
-          <h2>Booking Summary</h2>
-          <!-- Summary details will be dynamically added here using JavaScript -->
+        <div id="summaryForm" class="booking-summary card">
+          <h2 class="card-header text-center">Booking Summary</h2>
+          <input type="text" id="triptype" name="triptype" class="card-title form-control-plaintext" readonly/>
+          <div class="depart card-body">
+            <input type="text" id="code" name="departcodeid"class="card-title form-control-plaintext" readonly/>
+            <h4 id="showfname" class="card-title"></h4>
+            <h4 id="showlname" class="card-title"></h4>
+            <h4 id="showservice" class="card-title"></h4>
+            <h4 id="showseat" class="card-title"></h4>
+            <h4 id="showclass" class="card-title"></h4>
+            <h4 id="label" class="card-title"></h4>
+            <h4 id="showroute" class="card-title"></h4>
+            <h4 id="showstartingLocation" class="card-title"></h4>
+            <h4 id="showdestination" class="card-title"></h4>
+            <h4 id="showdeparture" class="card-title"></h4>
+            <h4 id="showprice" class="card-title"></h4>
+          </div>
+          <hr>
+          <div class="return card-body">
+            <input type="text" id="rcode" name="returncodeid"class="card-title form-control-plaintext" readonly/>
+            <h4 id="rlabel" class="card-title"></h4>
+            <h4 id="rshowroute" class="card-title"></h4>
+            <h4 id="rshowstartingLocation" class="card-title"></h4>
+            <h4 id="rshowdestination" class="card-title"></h4>
+            <h4 id="rshowdeparture" class="card-title"></h4>
+            <h4 id="rshowprice" class="card-title"></h4>
+          </div>
+          <hr>
+          <div class="card-footer text-center">
+            <h4 id="totalexp" class="card-title"></h4>
+          </div>
         </div>
 
         <!-- /Summary -->
@@ -254,24 +289,6 @@
                 </label>
               </div>
               <div class="mt-3">
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/a/a4/AMEX-logo-transparent.png"
-                  alt="AMEX"
-                  width="50"
-                  class="mr-2"
-                />
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/UnionPay_logo.svg/1200px-UnionPay_logo.svg.png"
-                  alt="UnionPay"
-                  width="50"
-                  class="mr-2"
-                />
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/4/41/Mastercard-logo.svg"
-                  alt="MasterCard"
-                  width="50"
-                  class="mr-2"
-                />
                 <img
                   src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg"
                   alt="Visa"
@@ -359,12 +376,11 @@
             <div class="card-body">
               <div class="form-group">
                 <label for="totalAmount">Total Amount</label>
-                <input
-                  type="text"
+                <h2
                   class="form-control"
                   id="totalAmount"
                   name="totalAmount"
-                />
+                ></h2>
               </div>
               <div class="form-group">
                 <label for="amountOfPayment">Amount of Payment</label>
@@ -384,6 +400,7 @@
                   name="transactionId"
                 />
               </div>
+              <img src="/QRcode.svg" alt="QR Code" class="w-25 d-block mx-auto">
             </div>
           </div>
         </div>
@@ -475,34 +492,8 @@
           $("#seatModal").modal("hide");
         });
 
-        // Function to update the booking summary
-        function updateBookingSummary() {
-          const summary = `
-          <h2>Booking Summary</h2>
-                    <p><strong>Personal Details:</strong></p>
-                    <ul>
-                        <li>First Name: ${$("#firstname").val()}</li>
-                        <!-- Add more personal details as needed -->
-                    </ul>
-                    <p><strong>Service:</strong></p>
-                    <p>${$("#service").val()}</p>
-                    <p><strong>Seat Plan:</strong></p>
-                    <p>Selected Seat: ${$("#seat").val()}</p>
-                    <p>Travel Class: ${$("#travelclass").val()}</p>
-                    <!-- Add more seat plan details as needed -->
-                `;
-          $(".booking-summary").html(summary);
-        }
-
-        // Call the function to update the booking summary on document ready
-        updateBookingSummary();
-
-        // Call the function to update the booking summary whenever there's a change in form fields
-        $("form").on("input", function () {
-          updateBookingSummary();
-        });
       });
     </script>
-    <script src="/paymentMode.js"></script>
+    
   </body>
 </html>

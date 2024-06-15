@@ -5,11 +5,58 @@ const User = require('../models/user');
 const Flight = require('../models/flight');
 const PersonalDetails = require('../models/PersonalDetail');
 const ContactDetails = require('../models/ContactDetail');
+const SeatPlan = require('../models/seatplan.js');
+const PaymentDetails = require('../models/paymentDetails.js');
+const TransactionDetails = require('../models/transactionDetails.js');
+const ReservationDetails = require('../models/reservationDetails.js');
+const ServiceDetails =  require('../models/services_model.js');
 const bcrypt = require('bcryptjs');
 //method for routecode
 function removeVowels(str) {
     return str.replace(/[aeiouAEIOU]/g, '');
 }
+// Endpoint to get flight information by ID
+router.get('/flight/:id', async (req, res) => {
+    try {
+      const flightId = req.params.id;
+      const flight = await Flight.findById(flightId);
+      if (!flight) {
+        return res.status(404).send('Flight not found');
+      }
+      res.json(flight);
+    } catch (error) {
+      console.error('Error retrieving flight information:', error);
+      res.status(500).send('Internal server error');
+    }
+  });
+  
+  // Endpoint to create a new flight (for testing purposes)
+  router.post('/flight', async (req, res) => {
+    try {
+      const { startingLocation, destination, routecode, departure, timeFlight, price } = req.body;
+  
+      // Ensure the departure date is a valid date
+      const parsedDeparture = new Date(departure);
+      if (isNaN(parsedDeparture)) {
+        return res.status(400).send('Invalid departure date');
+      }
+  
+      const newFlight = new Flight({
+        startingLocation,
+        destination,
+        routecode,
+        departure: parsedDeparture,
+        timeFlight,
+        price,
+      });
+  
+      await newFlight.save();
+      res.status(201).json(newFlight);
+    } catch (error) {
+      console.error('Error creating flight:', error);
+      res.status(500).send('Internal server error');
+    }
+  });
 // Define routes
 router.get("/", async (req, res) => {
     try {
@@ -220,6 +267,87 @@ router.post("/submitDetails", async (req, res) => {
         });
 
         await contactDetailsDoc.save();
+
+        const seatPlanDoc = new SeatPlan({
+            seatID: req.body.seat,
+            travel_Class: req.body.travelclass,
+            seat_status: true
+            
+        });
+        await seatPlanDoc.save();
+
+        const paymentDetailsDoc = new PaymentDetails({
+            amountPayment: req.body.amountOfPayment,
+            paymentStatus: true
+
+        })
+
+        await paymentDetailsDoc.save();
+
+        const transactionDetailsDoc = new TransactionDetails({
+            paymentDetails: paymentDetailsDoc._id,
+            transact_Type: req.body.paymentMethod,
+            transact_No: new Date()+""+paymentDetailsDoc._id
+        });
+
+        await transactionDetailsDoc.save();
+
+        let fType=req.body.triptype;
+        if(fType==="round-trip"){
+            const RreservationDetailsDoc = new ReservationDetails({
+                passengerID: savedPersonalDetails.id,
+                flightID: req.body.returncodeid,
+                seatID:seatPlanDoc._id,
+                transactionID:transactionDetailsDoc._id,
+                flightType:req.body.triptype
+    
+            })
+            await RreservationDetailsDoc.save();
+        }
+
+        const reservationDetailsDoc = new ReservationDetails({
+            passengerID: savedPersonalDetails.id,
+            flightID: req.body.departcodeid,
+            seatID:seatPlanDoc._id,
+            transactionID:transactionDetailsDoc._id,
+            flightType:req.body.triptype
+
+        })
+
+        await reservationDetailsDoc.save();
+
+        let ser = req.body.service;
+        let des = "";
+        
+        if (ser === "Go Basic") {
+            des = "Preferred seat: \nStandard seat of your choice";
+        } else if (ser === "Go Easy") {
+            des = `1pc hand-carry bag: 
+        Max. weight of 7kg
+        Preferred seat: 
+        Standard seat of your choice
+        1pc checked baggage: 
+        Max. weight of 20kg`;
+        } else {
+            des = `1pc hand-carry bag: 
+        Max. weight of 7kg
+        Preferred seat: 
+        Standard seat of your choice
+        1pc checked baggage: 
+        Max. weight of 20kg
+        CEB Flexi:
+        Convert your booking into non-expiring Travel Fund for future use`;
+        }
+        
+        const serviceDetailsDoc = new ServiceDetails({
+            servicePackage: req.body.service,
+            serviceDesc: des,
+            reservationID: reservationDetailsDoc._id
+        });
+        await serviceDetailsDoc.save();
+
+        
+
 
         req.session.message = {
             type: 'success',

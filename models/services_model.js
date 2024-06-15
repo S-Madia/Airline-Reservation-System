@@ -2,10 +2,6 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const servicesSchema = new Schema({
-    serviceID: {
-        type: String,
-        required: true
-    },
     servicePackage:{
         type: [String],
         required: true,
@@ -21,4 +17,4 @@ const servicesSchema = new Schema({
     }
 });
 
-module.exports = mongoose.model("Services", servicesSchema);
+module.exports = mongoose.model("ServiceDetails", servicesSchema);

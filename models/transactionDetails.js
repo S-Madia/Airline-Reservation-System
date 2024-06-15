@@ -2,6 +2,11 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const transactDetailsSchema = new Schema({
+    paymentDetails: {
+        type: Schema.Types.ObjectId,
+        ref: 'paymentDetails',
+        required: true
+    },
     transact_Type: {
         type: String,
         required: true
@@ -12,7 +17,7 @@ const transactDetailsSchema = new Schema({
     },
     promo:{
         type: [String],
-        required: true,
+        required: false,
         default: null
     },
     discount:{

@@ -1,10 +1,7 @@
 <%- include('layout/header') %>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
-<style>
-  .flight-card.selected {
-    background-color: lightblue;
-  }
-</style>
+<link rel="stylesheet" href="/formNavigator.css">
+
 <main>
   <div class="container mt-5">
     <h1>Flight Search Results</h1>
@@ -16,6 +13,7 @@
           <div class="col-md-4">
             <div class="card mb-4 text-decoration-none flight-card departure" style="color: inherit; cursor: pointer;" data-flight-id="<%= flight._id %>">
               <div class="card-body">
+                <h2 class="card-title flightId"><%= flight._id %></h2>
                 <h2 class="card-title"><%= flight.routecode %></h2>
                 <p class="card-text"><strong>From:</strong> <%= flight.startingLocation %></p>
                 <p class="card-text"><strong>To:</strong> <%= flight.destination %></p>
@@ -41,6 +39,7 @@
             <div class="col-md-4">
               <div class="card mb-4 text-decoration-none flight-card return" style="color: inherit; cursor: pointer;" data-flight-id="<%= flight._id %>">
                 <div class="card-body">
+                  <h2 class="card-title flightId" ><%= flight._id %></h2>
                   <h2 class="card-title"><%= flight.routecode %></h2>
                   <p class="card-text"><strong>From:</strong> <%= flight.startingLocation %></p>
                   <p class="card-text"><strong>To:</strong> <%= flight.destination %></p>
@@ -67,5 +66,5 @@
 <script>
   var tripType = "<%= tripType %>"; // Pass the tripType variable to JavaScript
 </script>
-<script src="/flight-selection.js"></script>
+<script type="module"src="/flightSelection.js"></script>
 <%- include('layout/footer') %>

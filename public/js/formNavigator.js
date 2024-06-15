@@ -17,6 +17,7 @@
         // Update currentFormIndex based on direction
         if (direction === 'next') {
           currentFormIndex++;
+
         } else if (direction === 'previous') {
           currentFormIndex--;
         }
@@ -42,4 +43,31 @@
           document.querySelector('.btn.btn-primary[onclick="navigate(\'next\')"]').style.display = 'inline-block';
           document.getElementById('submitButton').style.display = 'none';
         }
+        updateBookingSummary()
       }
+
+      let updateBookingSummary=()=>{
+        let firstname=document.querySelector("#firstname").value
+        let lastname=document.querySelector("#lastname").value
+
+        let service = document.querySelector("#service").value
+        let seat = document.querySelector("#seat").value
+        let travelClass = document.querySelector("#travelclass").value
+        // =================================================================== ===================================================================//
+
+        //show tags
+        let showfname =document.querySelector("#showfname")
+        let showlname =document.querySelector("#showlname")
+        let showservice =document.querySelector("#showservice")
+        let showseat =document.querySelector("#showseat")
+        let showclass =document.querySelector("#showclass")
+
+        showfname.innerText = "Firstname: "+ firstname;
+        showlname.innerText ="Lastname: "+lastname;
+        showservice.innerText ="Service: " +service;
+        showseat.innerText = "Seat: "+seat;
+        showclass.innerText = "Travel Class: "+travelClass;
+
+
+      }
+
