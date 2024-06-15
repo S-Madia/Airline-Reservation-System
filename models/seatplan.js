@@ -21,4 +21,4 @@ const seatplanSchema = new Schema({
     }
 });
 
-module.exports = mongoose.model("Services", seatplanSchema);
+module.exports = mongoose.model("SeatPlan", seatplanSchema);
