@@ -25,11 +25,6 @@ const transactDetailsSchema = new Schema({
         default: null
 
     },
-    payment_id:{
-        type: Schema.Types.ObjectId,
-        ref: "paymentDetails",
-        required: true
-    }
 });
 
 module.exports = mongoose.model("TransactDetails", transactDetailsSchema);
