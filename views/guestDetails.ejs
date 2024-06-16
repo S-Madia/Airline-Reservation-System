@@ -13,8 +13,9 @@
    <link rel="stylesheet" href="/guestDetails.css">
    <script async src="/formNavigator.js"></script>
    <script async src="/paymentMode.js"></script>
+   <!-- <script src="/flightpayment.js"></script> -->
+   <script async type="module" src="/flightpayment.js" async></script>
    <script async type="module" src="/getFlightInfo.js"></script>
-   
    <script async type="module" src="/flightParam.js"></script>
   </head>
   <body>
@@ -170,6 +171,7 @@
                 class="form-control"
                 id="country"
                 name="country"
+                list="clist"
               />
             </div>
           </fieldset>
@@ -534,7 +536,6 @@
           </div>
         </div>
       </div>
-    
 
     <!-- Bootstrap JS, Popper.js, and jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
