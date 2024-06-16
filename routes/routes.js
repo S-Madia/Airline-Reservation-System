@@ -361,15 +361,5 @@ router.post("/submitDetails", async (req, res) => {
     }
 });
 
-//Pay Details
-
-router.post("/payDetails", async(req, res) =>{
-    try {
-        
-    } catch (error) {
-        console.log(e.message)
-    }
-})
-
 // Export the router
 module.exports = router;
