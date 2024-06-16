@@ -51,6 +51,7 @@ document.getElementById('continueBtn').addEventListener('click', function() {
       alert('Please select a departure flight.');
     }
   }
+  sessionStorage.setItem('tripType', tripType);
 });
 
 // Initialize the selection process
