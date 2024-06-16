@@ -17,6 +17,19 @@ body {
   padding-top: 60px;
 }
 
+.header{
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 170px;
+  background: #1A2061;
+  height: 10%;
+}
 header {
   position: fixed;
   top: 0;
@@ -283,7 +296,7 @@ input[type="text"] {
     font-weight: bolder;
 }
 
-.card-container{
+.hcard-container{
   display: flex;
   flex-wrap: wrap;
   background: white;
@@ -294,7 +307,7 @@ input[type="text"] {
   justify-content:space-around;
 
 }
-.card{
+.hcard{
   width: 400px;
   height: auto;
   background-color: #1E2571;
@@ -368,7 +381,7 @@ input[type="text"] {
   font-weight: bolder;
 }
 
-.card p{
+.hcard p{
   width: 100%;
   color: #FAFFEB;
 }
