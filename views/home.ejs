@@ -15,22 +15,20 @@
     />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet"href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
   </head>
   <body>
     <!-- Start of Header -->
     <header>
-      <div class="header_content">
       <a href="#" class="logo">AIRPLANE</a>
+      <div class=" bx bx-menu" id="menu-icon"></div>
       <ul class="navbar">
-          <li><a href="#book" class="nav_link">BOOK</a></li>
-          <li><a href="#manage" class="nav_link">MANAGE</a></li>
-          <li><a href="#infotravel" class="nav_link">INFO TRAVEL</a></li>
-          <li><a href="#explore" class="nav_link">EXPLORE</a></li>
-          <li><a href="#aboutus" class="nav_link">ABOUT US</a></li>
+          <li><a href="#book">BOOK</a></li>
+          <li><a href="#manage">MANAGE</a></li>
+          <li><a href="#infotravel">INFO TRAVEL</a></li>
+          <li><a href="#epxlore">EXPLORE</a></li>
+          <li><a href="#aboutus">ABOUT US</a></li>
       </ul>
-    </div class="header_content2">
-        <a href="#button" class="btn">Log In</a>
-    </div>
   </header>
 
     <!-- End of Header -->
@@ -142,73 +140,87 @@
         </div>
       </div>
     </main>
-    <footer>
+    <!-- End of form -->
+     <!-- Footer -->
+    <footer> 
       <div class="fheading">
         <div class="fcontent">
           <h3>Get the latest news and Updates</h3>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente
-            reiciendis voluptatem animi velit distinctio similique fugiat
-            quaerat nam temporibus. Quaerat, blanditiis. Totam incidunt
-            provident tenetur. Asperiores quasi voluptas iure iste!
+            Your trusted partner in travel, offering exceptional service and seamless experiences!
           </p>
         </div>
-        <input type="text" placeholder="Enter Your Email" />
-        <button class="subs">Subscribe</button>
+        <div class="input-container">
+        <input type="text" autocomplete="off" name="text" class="input" placeholder="Enter Your Email Address!">
+        <button><span class="button_top"> Subscribe! </span></button>
+      </div>
+      </div>
 
-      </div>
-      <div class="mainfooter">
-        <div class="fbox">
-          <img src="https://cdn-icons-png.flaticon.com/128/64/64572.png" alt="" class="proIcon">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet commodi beatae harum est eius nemo ab cupiditate quam iure consequuntur dolore corporis possimus saepe, aliquid quisquam impedit eligendi mollitia ex.</p>
-          <div class="icon-container">
-            <img src="https://cdn-icons-png.flaticon.com/128/64/64572.png" alt="" class="proIcon">
-            <img src="https://cdn-icons-png.flaticon.com/128/64/64572.png" alt="" class="proIcon">
-            <img src="https://cdn-icons-png.flaticon.com/128/64/64572.png" alt="" class="proIcon">
-            <img src="https://cdn-icons-png.flaticon.com/128/64/64572.png" alt="" class="proIcon">
-          </div>
-      </div>
-        <div class="fbox">
-          <h3>Contact us</h3>
-          <p>Sample text</p>
-          <p>Sample text</p>
-          <p>Sample text</p>
-          <p>Sample text</p>
-          
-      </div>
-      <div class="fbox">
-          <h3>Support and help</h3>
-          <p>Sample text</p>
+      <div class="footer">
+        <div class="main">
+            <div class="col">
+                <h4>BOOK</h4>
+                <ul>
+                    <li><a href="#Flights">Flights</a></li>
+                    <li><a href="#SeatSale">Seat Sale</a></li>
+                    <li><a href="#PassengerCargo">Passenger and Cargo</a></li>
+                    <li><a href="#AccountRegis">Account Registration</a></li>
+                    <li><a href="#Partner">Partner Agents</a></li>
+                </ul>
+            </div>
+            
+            <div class="col">
+                <h4>MANAGE</h4>
+                <ul>
+                    <li><a href="#Check In">Check In</a></li>
+                    <li><a href="#Manage Booking">Manage Booking</a></li>
+                    <li><a href="#Flight Status">Flight Status</a></li>
+                    <li><a href="#Add Ons">Add Ons</a></li>
+                    <li><a href="#Special">Special Assistance</a></li>
+                </ul>
+            </div>
 
-          <p>Sample text</p>
-       
-          <p>Sample text</p>
-          
-          <p>Sample text</p>
-         
-      </div>
-      <div class="fbox">
-        <h3>Contact us</h3>
-        <p>Sample text</p>
-        <p>Sample text</p>
-        <p>Sample text</p>
-        <p>Sample text</p>
-        
+            <div class="col">
+                <h4>TRAVEL INFO</h4>
+                <ul>
+                    <li><a href="#Baggage Info">Baggage Info</a></li>
+                    <li><a href="#Payment Options">Payment Options</a></li>
+                    <li><a href="#Travel Advisories">Travel Advisories</a></li>
+                    <li><a href="#Booking">Booking and Check In</a></li>
+                    <li><a href="#Service Fee">Services Fee</a></li>
+                </ul>
+            </div>
+
+            <div class="col">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="#Explore">Explore</a></li>
+                    <li><a href="#Ph Destination">Philippine Destination</a></li>
+                    <li><a href="#City Guides">City Guides</a></li>
+                </ul>
+            </div>
+
+            <div class="col">
+                <h4>About</h4>
+                <ul>
+                    <li><a href="#About">About</a></li>
+                    <li><a href="#Our Story">Our Story</a></li>
+                    <li><a href="#Talk to Us">Talk to Us</a></li>
+                    <li><a href="#Campaign">Campaign and Partners</a></li>
+                </ul>
+            </div>
+
+            <div class="col">
+                <h4>Contact Us Here!</h4>
+                <div class="social">
+                <a href=""><i class='bx bxl-facebook'></i></a>
+                <a href=""><i class='bx bxl-instagram' ></i></a>
+                <a href=""><i class='bx bxl-twitter' ></i></a>
+                <a href=""><i class='bx bxl-youtube'></i></a>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="fbox">
-        <h3>Support and help</h3>
-        <p>Sample text</p>
-
-        <p>Sample text</p>
-     
-        <p>Sample text</p>
-        
-        <p>Sample text</p>
-       
-  
-    </div>
-      </div>
-
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
