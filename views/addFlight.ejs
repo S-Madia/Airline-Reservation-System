@@ -22,9 +22,11 @@
                             <input
                                 type="text"
                                 class="form-control"
-                                id="from"
+                                id="from_airport"
                                 name="startingLocation"
                                 placeholder="Enter starting location"
+                                list="airport"
+                                maxlength="30"
                                 required
                             />
                         </div>
@@ -33,9 +35,11 @@
                             <input
                                 type="text"
                                 class="form-control"
-                                id="to"
+                                id="to_airport"
                                 name="destination"
                                 placeholder="Enter destination"
+                                list="airport"
+                                maxlength="30"
                                 required
                             />
                         </div>
@@ -97,6 +101,7 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="/actions.js"></script>
 <script>
     flatpickr("#departure-date", {
         enableTime: false,
