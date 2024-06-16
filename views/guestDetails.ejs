@@ -10,6 +10,7 @@
       rel="stylesheet"
     />
    <link rel="stylesheet" href="/formNavigator.css">
+   <link rel="stylesheet" href="/guestDetails.css">
    <script async src="/formNavigator.js"></script>
    <script async src="/paymentMode.js"></script>
    <script async type="module" src="/getFlightInfo.js"></script>
@@ -17,6 +18,57 @@
    <script async type="module" src="/flightParam.js"></script>
   </head>
   <body>
+    <!-- Start of Header -->
+    <header>
+      <a href="#" class="logo">AIRPLANE</a>
+      <div class="bx bx-menu" id="menu-icon"></div>
+      <ul class="navbar">
+        <li class="menubar">
+          <a href="#book">BOOK</a>
+          <ul class="submenu">
+            <li><a href="#option1">Option 1</a></li>
+            <li><a href="#option2">Option 2</a></li>
+            <li><a href="#option3">Option 3</a></li>
+          </ul>
+        </li>
+        <li class="menubar">
+          <a href="#manage">MANAGE</a>
+          <ul class="submenu">
+            <li><a href="#option1">Option 1</a></li>
+            <li><a href="#option2">Option 2</a></li>
+            <li><a href="#option3">Option 3</a></li>
+          </ul>
+        </li>
+        <li class="menubar">
+          <a href="#infotravel">INFO TRAVEL</a>
+          <ul class="submenu">
+            <li><a href="#option1">Option 1</a></li>
+            <li><a href="#option2">Option 2</a></li>
+            <li><a href="#option3">Option 3</a></li>
+          </ul>
+        </li>
+        <li class="menubar">
+          <a href="#explore">EXPLORE</a>
+          <ul class="submenu">
+            <li><a href="#option1">Option 1</a></li>
+            <li><a href="#option2">Option 2</a></li>
+            <li><a href="#option3">Option 3</a></li>
+          </ul>
+        </li>
+        <li class="menubar">
+          <a href="#aboutus">ABOUT US</a>
+          <ul class="submenu">
+            <li><a href="#option1">Option 1</a></li>
+            <li><a href="#option2">Option 2</a></li>
+            <li><a href="#option3">Option 3</a></li>
+          </ul>
+        </li>
+      </ul>
+    </header>
+    <!-- End of Header -->
+
+    
+
     <div class="container mt-5">
       <h1 class="mb-4">Details Form</h1>
       <form id="detailsForm" action="/submitDetails" method="POST">
@@ -31,6 +83,7 @@
       </div>
         <!-- Start of 1st Form -->
         <div id="firstForm">
+          <div class="card">
           <h2>Personal Details</h2>
           <div class="form-group">
             <label for="firstname">First Name:</label>
@@ -131,6 +184,7 @@
             />
           </div>
 
+        
           <h2>Contact Details</h2>
           <div class="form-group">
             <label for="email">Email:</label>
@@ -186,8 +240,14 @@
               />
             </div>
           </fieldset>
-        
+          <div class="cards">
+            <button type="button" class="btn btn-primary" onclick="navigate('previous')">Previous</button>
+            <button type="button" class="btn btn-primary" onclick="navigate('next')">Next</button>
+          </div>
         </div>
+      </div>
+      
+      
         <!-- End of 1st Form -->
         <!-- Start of 2nd Form -->
         <div id="secondForm">
@@ -200,6 +260,8 @@
               <option value="Go Flexi">Go Flexi</option>
             </select>
           </div>
+          <button type="button" class="btn btn-primary" onclick="navigate('previous')">Previous</button>
+          <button type="button" class="btn btn-primary" onclick="navigate('next')">Next</button>
         </div>
         <!-- End of 2nd Form -->
         <!-- Start of 3rd Form -->
@@ -230,6 +292,8 @@
               <option value="Business">Business</option>
             </select>
           </div>
+          <button type="button" class="btn btn-primary" onclick="navigate('previous')">Previous</button>
+          <button type="button" class="btn btn-primary" onclick="navigate('next')">Next</button>
         </div>
         <!-- End of 3rd Form -->
 
@@ -265,6 +329,8 @@
           <div class="card-footer text-center">
             <h4 id="totalexp" class="card-title"></h4>
           </div>
+          <button type="button" class="btn btn-primary" onclick="navigate('previous')">Previous</button>
+          <button type="button" class="btn btn-primary" onclick="navigate('next')">Next</button>
         </div>
 
         <!-- /Summary -->
@@ -406,11 +472,6 @@
         </div>
         
         <!-- Navigation buttons -->
-        <div class="mt-4">
-          <button type="button" class="btn btn-primary" onclick="navigate('previous')">Previous</button>
-          <button type="button" class="btn btn-primary" onclick="navigate('next')">Next</button>
-        </div>
-
         <button type="submit" class="btn btn-primary mt-4" id="submitButton">Submit</button>
       </form>
     </div>
@@ -473,7 +534,7 @@
           </div>
         </div>
       </div>
-    </div>
+    
 
     <!-- Bootstrap JS, Popper.js, and jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+  
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    text-decoration: none;
+    list-style: none;
+  }
+  
+  body {
+    background: #e8f0f7;
+    font-family: 'Inter', sans-serif;
+    min-height: 1960px;
+    padding-top: 60px;
+  }
+  
+  header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 170px;
+    background: #1A2061;
+    height: 10%;
+  }
+  
+  .logo {
+    color: #e8f0f7;
+    font-weight: 600;
+    font-size: 2.4rem;
+    text-decoration: none !important; 
+}
+
+  
+  .navbar {
+    display: flex;
+    padding-top: 25px;
+    position: relative;
+  }
+  
+  .navbar a {
+    color: #e8f0f7;
+    font-size: 1.1rem;
+    padding: 5px 20px;
+    font-weight: 500;
+    text-decoration: none;
+  }
+  
+  .navbar a:hover {
+    color: orange;
+    transition: .4s;
+  }
+  
+  #menu-icon {
+    font-size: 2rem;
+    cursor: pointer;
+    display: none;
+    color: orange; /* Adjust color */
+  }
+  
+  .menubar {
+    position: relative;
+  }
+  
+  .submenu {
+    display: none; /* Hide submenu by default */
+    list-style-type: none;
+    position: absolute;
+    background-color: #ffffff; /* Background color of the submenu */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add a shadow for a dropdown effect */
+    padding: 1rem;
+    width: 200px;
+    top: 100%; /* Position below the parent li */
+    left: 50%; /* Position at the center of the parent li */
+    transform: translateX(-50%); /* Center the submenu */
+    border-radius: 10px; /* Add border radius */
+  }
+  
+  .menubar:hover .submenu {
+    display: block; /* Show submenu when hovering over parent li */
+  }
+  
+  .submenu li {
+    color: #300440;
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .submenu li a {
+    color: #300440;
+    text-decoration: none;
+  }
+  
+  .submenu li a:hover {
+    color: orange;
+  }
+  
+  
+  
+  @media (max-width: 1140px) {
+    header {
+      padding: 10px 16px;
+    }
+  
+    .navbar {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      position: absolute;
+      top: -400px;
+      left: 0;
+      right: 0;
+      background: #2b2640;
+      transition: .3s;
+      z-index: 999;
+      display: none; /* Hide by default */
+    }
+  
+    .navbar.active {
+      display: flex; /* Show when active */
+      top: 70px;
+    }
+  
+    .navbar a {
+      padding: 1.5rem;
+      display: block;
+    }
+  
+  
+    #menu-icon {
+      display: initial; /* Show the menu icon */
+    }
+  }
+  
+  @media (max-width: 575px) {
+    .logo {
+      font-size: 2rem; /* Adjust logo size for smaller screens */
+    }
+  
+    .navbar {
+      padding-top: 60px; /* Adjust padding to push content down */
+    }
+  }
+  
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #1A2061;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    z-index: 1000;
+}
+
+.card {
+    
+    width: 80%;
+    border-radius: 20px;
+    margin: auto; /* Center the card horizontally */
+    background-color: #ffffff;
+    box-shadow: 20px 20px 60px black, -20px -20px 60px #ffffff;
+    position: absolute;
+    top: 12%;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    overflow-y: auto; /* Allows vertical scrolling if necessary */
+}
+
+.container {
+    padding: 20px;
+    flex-grow: 1; /* Ensures container takes up remaining space */
+}
+
+h1, h2, h3 {
+    color: #333333;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: bold;
+}
+
+.btn-primary {
+    background-color: #1A2061;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #000000;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+fieldset {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+legend {
+    font-weight: bold;
+}
+
+.hide {
+    display: none; /* Hide the hidden form group */
+}
