@@ -157,24 +157,17 @@
     height: auto;
     display: flex;
     gap: 0 2em;
-    padding-top: 2rlh;
+    margin-top: 5rlh;
 }
 
 .cont1 {
     width: 100%;
     height: auto;
     display: flex;
-    flex-shrink: inherit;
     gap: 0 2em;
     padding: 0 15em;
     justify-content: space-evenly;
     font-family: 'Noto Sans', sans-serif;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.edit_details {
-    /* Add specific styles if needed */
 }
 
 .cont1 ul {
@@ -199,7 +192,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    width: 120px;
+    width: 130px;
     height: 40px;
     border: none;
     padding: 0px 20px;
@@ -263,20 +256,19 @@ h6 {
     margin-left: 2em;
 }
 
-.card_cont {
+.col-md-4 {
     width: 100%;
     height: auto;
     justify-content: center;
     align-items: center;
     display: flex;
     flex-direction: column;
-    margin-top: 2rlh;
 }
 
 .card {
     box-sizing: border-box;
     width: 75%;
-    height: 150px;
+    height: 350px;
     background: rgba(217, 217, 217, 0.58);
     box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
     backdrop-filter: blur(6px);
@@ -311,12 +303,13 @@ h6 {
   list-style: none;
 }
 .progress-bar {
+  margin-top: 2rlh;
   display: flex;
   flex-direction: row;
   align-items: center;
   background-color: #F5A614;
   padding: 1em 2em;
-  border-radius: 25px;
+  border-radius: 7.5px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 

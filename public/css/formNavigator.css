@@ -10,10 +10,17 @@
     margin-top: 20px;
   }
   .flight-card.selected {
-    background-color: lightblue;
+    background-color: #F5A614;
+    font-weight: bold;
   }
 
 .row{
-  margin-top: 7rlh;
+  margin-top: 2rlh;
+  margin-left: 5em;
+}
+
+main{
+  margin: 0;
+  padding: 0;
 }
   
