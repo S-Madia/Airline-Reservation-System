@@ -172,6 +172,7 @@
                 id="country"
                 name="country"
                 list="clist"
+                required
               />
             </div>
           </fieldset>
@@ -182,6 +183,7 @@
               class="form-control"
               id="nationality"
               name="nationality"
+              list="nationalities"
               required
             />
           </div>
@@ -218,6 +220,7 @@
               name="telno"
               maxlength="8"
               required
+              oninput="this.value = this.value.replace(/\D+/g, '')"  
             />
           </div>
           <fieldset class="form-group">
@@ -239,6 +242,7 @@
                 id="emergencyno"
                 name="emergencyno"
                 maxlength="10"
+                oninput="this.value = this.value.replace(/\D+/g, '')"  
               />
             </div>
           </fieldset>
