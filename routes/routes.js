@@ -163,6 +163,20 @@ router.get('/flightList', async (req, res) => {
         res.json({ message: err.message });
     }
 });
+
+router.get('/delete/:id', async (req, res)=>{
+    try{
+        const flightnum = req.params.id;
+        const deleteflight = await Flight.deleteOne({_id: flightnum});
+        console.log(deleteflight.acknowledged);
+        res.redirect('back')
+    } catch(err){
+        console.log(err)
+    }
+})
+
+
+
 router.post("/addFlight",async (req, res) =>{
     const startingLocation = req.body.startingLocation;
         const destination = req.body.destination;
