@@ -267,18 +267,63 @@ document.addEventListener("DOMContentLoaded",  function(){
         "Åland Islands"
     ];
 
-    const dlist = document.createElement("datalist");
-    const cinput = document.querySelector("#country");
-    const option = document.createElement("option");
+    let dlist = document.createElement("datalist");
+    let cinput = document.querySelector("#country");
+    let option = document.createElement("option");
     dlist.setAttribute("id", "clist");
-    cinput.insertAdjacentElement("afterend", dlist)
+    cinput.insertAdjacentElement("afterend", dlist);
     countryList.forEach((country)=>{
         option.setAttribute("value", country);
         dlist.appendChild(option.cloneNode(true));
     })
 })
 
+document.addEventListener("DOMContentLoaded", function(){
+    const nationalities = [
+        "Afghan", "Albanian", "Algerian", "Andorran", "Angolan", "Antiguan","Barbudan",
+        "Argentinian", "Armenian", "Australian", "Austrian", "Azerbaijani", "Bahamian",
+        "Bahraini", "Bangladeshi", "Barbadian", "Belarusian", "Belgian", "Belizean",
+        "Beninese", "Bhutanese", "Bolivian", "Bosnian or Herzegovinian", "Botswanan",
+        "Brazilian", "Bruneian", "Bulgarian", "Burkinabe", "Burundian", "Cabo Verdean",
+        "Cambodian", "Cameroonian", "Canadian", "Central African", "Chadian", "Chilean",
+        "Chinese", "Colombian", "Comoran", "Congolese (Congo, Democratic Republic of the)",
+        "Congolese (Congo, Republic of the)", "Costa Rican", "Croatian", "Cuban", "Cypriot",
+        "Czech", "Danish", "Djiboutian", "Dominican", "Dominican (Republic)", "Ecuadorian",
+        "Egyptian", "Salvadoran", "Equatorial Guinean", "Eritrean", "Estonian", "Eswatini",
+        "Ethiopian", "Fijian", "Finnish", "French", "Gabonese", "Gambian", "Georgian",
+        "German", "Ghanaian", "Greek", "Grenadian", "Guatemalan", "Guinean", "Bissau-Guinean",
+        "Guyanese", "Haitian", "Honduran", "Hungarian", "Icelandic", "Indian", "Indonesian",
+        "Iranian", "Iraqi", "Irish", "Israeli", "Italian", "Jamaican", "Japanese", "Jordanian",
+        "Kazakh", "Kenyan", "I-Kiribati", "North Korean", "South Korean", "Kosovar",
+        "Kuwaiti", "Kyrgyz", "Lao", "Latvian", "Lebanese", "Basotho", "Liberian", "Libyan",
+        "Liechtenstein citizen", "Lithuanian", "Luxembourgish", "Malagasy", "Malawian",
+        "Malaysian", "Maldivian", "Malian", "Maltese", "Marshallese", "Mauritanian",
+        "Mauritian", "Mexican", "Micronesian", "Moldovan", "Monacan", "Mongolian",
+        "Montenegrin", "Moroccan", "Mozambican", "Burmese", "Namibian", "Nauruan", "Nepali",
+        "Dutch", "New Zealander", "Nicaraguan", "Nigerien", "Nigerian", "North Macedonian",
+        "Norwegian", "Omani", "Pakistani", "Palauan", "Palestinian", "Panamanian",
+        "Papua New Guinean", "Paraguayan", "Peruvian", "Filipino", "Polish", "Portuguese",
+        "Qatari", "Romanian", "Russian", "Rwandan", "Saint Kitts and Nevis", "Saint Lucian",
+        "Saint Vincentian", "Samoan", "San Marinese", "Sao Tomean", "Saudi", "Senegalese",
+        "Serbian", "Seychellois", "Sierra Leonean", "Singaporean", "Slovak", "Slovene",
+        "Solomon Islander", "Somali", "South African", "South Sudanese", "Spanish",
+        "Sri Lankan", "Sudanese", "Surinamese", "Swedish", "Swiss", "Syrian", "Taiwanese",
+        "Tajikistani", "Tanzanian", "Thai", "Timorese", "Togolese", "Tongan", "Trinidadian or Tobagonian",
+        "Tunisian", "Turkish", "Turkmen", "Tuvaluan", "Ugandan", "Ukrainian", "Emirati",
+        "British", "American", "Uruguayan", "Uzbekistani", "Ni-Vanuatu", "Vatican citizen",
+        "Venezuelan", "Vietnamese", "Yemeni", "Zambian", "Zimbabwean"
+      ];
 
+      const nationality = document.querySelector("#nationality")
+      let dlist = document.createElement("datalist");
+      let option = document.createElement("option");
+      dlist.setAttribute("id", "nationalities");
+      nationality.insertAdjacentElement("afterend", dlist)
+      nationalities.forEach((nation)=>{
+        option.setAttribute("value", nation);
+        dlist.appendChild(option.cloneNode(true))
+      })
+});
 
 
 
