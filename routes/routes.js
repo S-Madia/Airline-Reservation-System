@@ -116,8 +116,8 @@ router.post('/login', async (req, res)=>{
         if(!check){
             res.send("Account not Found");
             console.log("Account not Found");
+            return 
         }
-
         const isPasswordMatch =  await bcrypt.compare(req.body.password, check.password);
         if(isPasswordMatch){
             req.session.userId = check._id;
@@ -133,6 +133,8 @@ router.post('/login', async (req, res)=>{
         res.send("Wrong Details");
     }
 
+}).get("/login", (req, res)=>{
+    res.render("login");
 });
 // Admin page route
 router.get('/adminpage', async (req, res) => {
