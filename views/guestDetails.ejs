@@ -220,6 +220,7 @@
               name="telno"
               maxlength="8"
               required
+              oninput="this.value = this.value.replace(/\D+/g, '')"  
             />
           </div>
           <fieldset class="form-group">
@@ -241,6 +242,7 @@
                 id="emergencyno"
                 name="emergencyno"
                 maxlength="10"
+                oninput="this.value = this.value.replace(/\D+/g, '')"  
               />
             </div>
           </fieldset>
