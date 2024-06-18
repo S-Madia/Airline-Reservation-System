@@ -116,8 +116,8 @@ router.post('/login', async (req, res)=>{
         if(!check){
             res.send("Account not Found");
             console.log("Account not Found");
+            return 
         }
-
         const isPasswordMatch =  await bcrypt.compare(req.body.password, check.password);
         if(isPasswordMatch){
             req.session.userId = check._id;
@@ -133,6 +133,8 @@ router.post('/login', async (req, res)=>{
         res.send("Wrong Details");
     }
 
+}).get("/login", (req, res)=>{
+    res.render("login");
 });
 // Admin page route
 router.get('/adminpage', async (req, res) => {
@@ -163,6 +165,20 @@ router.get('/flightList', async (req, res) => {
         res.json({ message: err.message });
     }
 });
+
+router.get('/delete/:id', async (req, res)=>{
+    try{
+        const flightnum = req.params.id;
+        const deleteflight = await Flight.deleteOne({_id: flightnum});
+        console.log(deleteflight.acknowledged);
+        res.redirect('back')
+    } catch(err){
+        console.log(err)
+    }
+})
+
+
+
 router.post("/addFlight",async (req, res) =>{
     const startingLocation = req.body.startingLocation;
         const destination = req.body.destination;
@@ -420,16 +436,6 @@ router.post("/submitDetails", async (req, res) => {
         res.status(500).json({ message: err.message, type: 'danger' });
     }
 });
-
-//Pay Details
-
-router.post("/payDetails", async(req, res) =>{
-    try {
-        
-    } catch (error) {
-        console.log(e.message)
-    }
-})
 
 // Export the router
 module.exports = router;

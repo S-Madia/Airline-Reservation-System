@@ -36,4 +36,9 @@ const flightSchema = new mongoose.Schema({
         default:Date.now,
     }
 });
+
+// flightSchema.methods.delflights = function(flightname){
+    
+//     return this.remove({startingLocation: new RegExp(flightname, 'i')})
+// }
 module.exports=mongoose.model("Flight", flightSchema);

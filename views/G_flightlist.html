@@ -5,21 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flight List</title>
     <link rel="stylesheet" href="/public/css/G_flightlist.css">
+    <link rel="stylesheet"href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <header>
-        <a href="#" class="logo">AIRPLANE</a>
-        <div class=" bx bx-menu" id="menu-icon"></div>
-        <ul class="navbar">
-            <li><a href="#book">BOOK</a></li>
-            <li><a href="#manage">MANAGE</a></li>
-            <li><a href="#infotravel">INFO TRAVEL</a></li>
-            <li><a href="#epxlore">EXPLORE</a></li>
-            <li><a href="#aboutus">ABOUT US</a></li>
-        </ul>
-    </header>
-    <main>
+      <a href="#" class="logo">AIRPLANE</a>
+      <div class="bx bx-menu" id="menu-icon"></div>
+      <ul class="navbar">
+        <li class="menubar">
+          <a href="#book">BOOK</a>
+          <ul class="submenu">
+            <li><a href="#option1">Option 1</a></li>
+            <li><a href="#option2">Option 2</a></li>
+            <li><a href="#option3">Option 3</a></li>
+          </ul>
+        </li>
+        <li class="menubar">
+          <a href="#manage">MANAGE</a>
+          <ul class="submenu">
+            <li><a href="#option1">Option 1</a></li>
+            <li><a href="#option2">Option 2</a></li>
+            <li><a href="#option3">Option 3</a></li>
+          </ul>
+        </li>
+        <li class="menubar">
+          <a href="#infotravel">INFO TRAVEL</a>
+          <ul class="submenu">
+            <li><a href="#option1">Option 1</a></li>
+            <li><a href="#option2">Option 2</a></li>
+            <li><a href="#option3">Option 3</a></li>
+          </ul>
+        </li>
+        <li class="menubar">
+          <a href="#explore">EXPLORE</a>
+          <ul class="submenu">
+            <li><a href="#option1">Option 1</a></li>
+            <li><a href="#option2">Option 2</a></li>
+            <li><a href="#option3">Option 3</a></li>
+          </ul>
+        </li>
+        <li class="menubar">
+          <a href="#aboutus">ABOUT US</a>
+          <ul class="submenu">
+            <li><a href="#option1">Option 1</a></li>
+            <li><a href="#option2">Option 2</a></li>
+            <li><a href="#option3">Option 3</a></li>
+          </ul>
+        </li>
+      </ul>
         <div class="booked_cont">
             <div class="cont1">
                 <div class="depart">
@@ -119,6 +152,83 @@
                 </div>
             </div>
         </div>
-    </main>
+        <div class="fheading">
+          <div class="fcontent">
+            <h3>Get the latest news and Updates</h3>
+            <p>
+              Your trusted partner in travel, offering exceptional service and seamless experiences!
+            </p>
+          </div>
+          <div class="input-container">
+          <input type="text" autocomplete="off" name="text" class="input" placeholder="Enter Your Email Address!">
+          <button><span class="button_top"> Subscribe! </span></button>
+        </div>
+        </div>
+  
+        <div class="footer">
+          <div class="main">
+              <div class="col">
+                  <h4>BOOK</h4>
+                  <ul>
+                      <li><a href="#Flights">Flights</a></li>
+                      <li><a href="#SeatSale">Seat Sale</a></li>
+                      <li><a href="#PassengerCargo">Passenger and Cargo</a></li>
+                      <li><a href="#AccountRegis">Account Registration</a></li>
+                      <li><a href="#Partner">Partner Agents</a></li>
+                  </ul>
+              </div>
+              
+              <div class="col">
+                  <h4>MANAGE</h4>
+                  <ul>
+                      <li><a href="#Check In">Check In</a></li>
+                      <li><a href="#Manage Booking">Manage Booking</a></li>
+                      <li><a href="#Flight Status">Flight Status</a></li>
+                      <li><a href="#Add Ons">Add Ons</a></li>
+                      <li><a href="#Special">Special Assistance</a></li>
+                  </ul>
+              </div>
+  
+              <div class="col">
+                  <h4>TRAVEL INFO</h4>
+                  <ul>
+                      <li><a href="#Baggage Info">Baggage Info</a></li>
+                      <li><a href="#Payment Options">Payment Options</a></li>
+                      <li><a href="#Travel Advisories">Travel Advisories</a></li>
+                      <li><a href="#Booking">Booking and Check In</a></li>
+                      <li><a href="#Service Fee">Services Fee</a></li>
+                  </ul>
+              </div>
+  
+              <div class="col">
+                  <h4>Explore</h4>
+                  <ul>
+                      <li><a href="#Explore">Explore</a></li>
+                      <li><a href="#Ph Destination">Philippine Destination</a></li>
+                      <li><a href="#City Guides">City Guides</a></li>
+                  </ul>
+              </div>
+  
+              <div class="col">
+                  <h4>About</h4>
+                  <ul>
+                      <li><a href="#About">About</a></li>
+                      <li><a href="#Our Story">Our Story</a></li>
+                      <li><a href="#Talk to Us">Talk to Us</a></li>
+                      <li><a href="#Campaign">Campaign and Partners</a></li>
+                  </ul>
+              </div>
+  
+              <div class="col">
+                  <h4>Contact Us Here!</h4>
+                  <div class="social">
+                  <a href=""><i class='bx bxl-facebook'></i></a>
+                  <a href=""><i class='bx bxl-instagram' ></i></a>
+                  <a href=""><i class='bx bxl-twitter' ></i></a>
+                  <a href=""><i class='bx bxl-youtube'></i></a>
+                  </div>
+              </div>
+          </div>
+      </div>
 </body>
 </html>
