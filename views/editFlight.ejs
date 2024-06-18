@@ -1,0 +1,42 @@
+<%- include('layout/header') %>
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+/>
+<link
+    rel="stylesheet"
+    href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+/>
+<link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+/>
+
+<div class="container mt-5">
+    <h2>Edit Flight</h2>
+    <form action="/updateFlight/<%= flight._id %>" method="post">
+        <div class="form-group">
+            <label for="startingLocation">Starting Location</label>
+            <input type="text" class="form-control" id="startingLocation" name="startingLocation" value="<%= flight.startingLocation %>" required>
+        </div>
+        <div class="form-group">
+            <label for="destination">Destination</label>
+            <input type="text" class="form-control" id="destination" name="destination" value="<%= flight.destination %>" required>
+        </div>
+        <div class="form-group">
+            <label for="departure">Departure Date</label>
+            <input type="date" class="form-control" id="departure" name="departure" value="<%= flight.departure.toISOString().split('T')[0] %>" required>
+        </div>
+        <div class="form-group">
+            <label for="timeFlight">Flight Time</label>
+            <input type="text" class="form-control" id="timeFlight" name="timeFlight" value="<%= flight.timeFlight %>" required>
+        </div>
+        <div class="form-group">
+            <label for="price">Price</label>
+            <input type="number" class="form-control" id="price" name="price" value="<%= flight.price %>" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Update Flight</button>
+    </form>
+</div>
+
+<%- include('layout/footer') %>
