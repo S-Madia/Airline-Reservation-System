@@ -58,15 +58,18 @@ router.get('/flight/:id', async (req, res) => {
     }
   });
 // Define routes
-router.get("/", async (req, res) => {
-    try {
-        const users = await User.find(); // Fetch all users from the database
-        res.render("login", { users }); // Pass the users to the view
-    } catch (err) {
-        res.status(500).json({ message: err.message });
-    }
-});
+// router.get("/", async (req, res) => {
+//     try {
+//         const users = await User.find(); // Fetch all users from the database
+//         res.render("login", { users }); // Pass the users to the view
+//     } catch (err) {
+//         res.status(500).json({ message: err.message });
+//     }
+// });
 
+router.get("/", async (req, res)=>{
+    res.render("home");
+})
 router.get("/signup", (req, res) => {
     res.render("signup");
 });
@@ -116,7 +119,7 @@ router.post('/login', async (req, res)=>{
         if(!check){
             res.send("Account not Found");
             console.log("Account not Found");
-            return 
+            return
         }
         const isPasswordMatch =  await bcrypt.compare(req.body.password, check.password);
         if(isPasswordMatch){
