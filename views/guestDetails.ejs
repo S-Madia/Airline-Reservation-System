@@ -17,9 +17,18 @@
    <script async type="module" src="/flightpayment.js" async></script>
    <script async type="module" src="/getFlightInfo.js"></script>
    <script async type="module" src="/flightParam.js"></script>
+    
+    <link rel="stylesheet"href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="guestDetails.css">
+    <link rel="stylesheet" href="/formNavigator.css" />
+    <script async src="/formNavigator.js"></script>
+    <script async src="/paymentMode.js"></script>
+    <script async type="module" src="/getFlightInfo.js"></script>
+
+    <script async type="module" src="/flightParam.js"></script>
+
   </head>
   <body>
-    <!-- Start of Header -->
     <header>
       <a href="#" class="logo">AIRPLANE</a>
       <div class="bx bx-menu" id="menu-icon"></div>
@@ -66,22 +75,19 @@
         </li>
       </ul>
     </header>
-    <!-- End of Header -->
-
-    
 
     <div class="container mt-5">
-      <h1 class="mb-4">Details Form</h1>
+      <h1 class="mb-4 ">Details Form</h1>
       <form id="detailsForm" action="/submitDetails" method="POST">
         <div class="form-group hide">
           <% if (userId) { %>
-              <p>User ID: <%= userId %></p>
+          <p>User ID: <%= userId %></p>
           <% } else { %>
-              <p>User ID not found</p>
+          <p>User ID not found</p>
           <% } %>
-          <h3>User ID: <%=  userId %></h3>
+          <h3>User ID: <%= userId %></h3>
           <input type="hidden" id="user" name="user" value="<%= userId %>" />
-      </div>
+        </div>
         <!-- Start of 1st Form -->
         <div id="firstForm">
           <div class="card">
@@ -249,66 +255,261 @@
           <div class="cards">
             <button type="button" class="btn btn-primary" onclick="navigate('previous')">Previous</button>
             <button type="button" class="btn btn-primary" onclick="navigate('next')">Next</button>
+          <div class="card2 shadow mb-5">
+            <h2 class="c1 card-header">Personal Details</h2>
+            <div class="card-body">
+              <div class="form-group">
+                <label for="firstname">First Name:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="firstname"
+                  name="firstname"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="middleinitial">Middle Initial:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="middleinitial"
+                  name="middleinitial"
+                />
+              </div>
+              <div class="form-group">
+                <label for="lastname">Last Name:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="lastname"
+                  name="lastname"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="suffix">Suffix:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="suffix"
+                  name="suffix"
+                  placeholder="N/A If None"
+                />
+              </div>
+              <div class="form-group">
+                <label for="gender">Gender:</label>
+                <select name="gender" id="gender" class="form-control">
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="birthday">Birthday:</label>
+                <input
+                  type="date"
+                  class="form-control"
+                  id="birthday"
+                  name="birthday"
+                  required
+                />
+              </div>
+              <fieldset class="form-group">
+                <legend class="c2">Address</legend>
+                <div class="form-group">
+                  <label for="street">Street:</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="street"
+                    name="street"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="city">City:</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="city"
+                    name="city"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="state">State:</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="state"
+                    name="state"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="zipCode">Zip Code:</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="zipCode"
+                    name="zipCode"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="country">Country:</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="country"
+                    name="country"
+                  />
+                </div>
+              </fieldset>
+              <div class="form-group">
+                <label for="nationality">Nationality:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="nationality"
+                  name="nationality"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="card2 shadow">
+            <h2 class="c1 card-header">Contact Details</h2>
+            <div class="card-body">
+              <div class="form-group">
+                <label for="email">Email:</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  name="email"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone:</label>
+                <input
+                  type="tel"
+                  class="form-control"
+                  id="phone"
+                  name="phone"
+                  maxlength="10"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="telno">Telephone:</label>
+                <input
+                  type="tel"
+                  class="form-control"
+                  id="telno"
+                  name="telno"
+                  maxlength="8"
+                  required
+                />
+              </div>
+              <fieldset class="form-group">
+                <legend class="c2">Emergency Contact</legend>
+                <div class="form-group">
+                  <label for="emergencyname">Emergency Contact Name:</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="emergencyname"
+                    name="emergencyname"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="emergencyno">Emergency Contact Number:</label>
+                  <input
+                    type="tel"
+                    class="form-control"
+                    id="emergencyno"
+                    name="emergencyno"
+                    maxlength="10"
+                  />
+                </div>
+              </fieldset>
+            </div>
           </div>
         </div>
-      </div>
-      
-      
         <!-- End of 1st Form -->
         <!-- Start of 2nd Form -->
         <div id="secondForm">
-          <h2>Service</h2>
-          <div class="form-group">
-            <label for="service">Service:</label>
-            <select name="service" id="service" name = "service" class="form-control">
-              <option value="Go Basic">Go Basic</option>
-              <option value="Go Easy">Go Easy</option>
-              <option value="Go Flexi">Go Flexi</option>
-            </select>
+          <div class="card2 shadow">
+            <div class="card-body">
+                <label for="service">Service:</label>
+                <select
+                  name="service"
+                  id="service"
+                  name="service"
+                  class="form-control"
+                >
+                  <option value="Go Basic">Go Basic</option>
+                  <option value="Go Easy">Go Easy</option>
+                  <option value="Go Flexi">Go Flexi</option>
+                </select>
+              </div>
           </div>
-          <button type="button" class="btn btn-primary" onclick="navigate('previous')">Previous</button>
-          <button type="button" class="btn btn-primary" onclick="navigate('next')">Next</button>
         </div>
         <!-- End of 2nd Form -->
         <!-- Start of 3rd Form -->
         <div id="thirdForm">
-          <h2>Seat Plan</h2>
-          <div class="form-group">
-            <label for="seat">Selected Seat:</label>
-            <input
-              type="text"
-              class="form-control"
-              id="seat"
-              name="seat"
-              readonly
-            required/>
-            <button
-              type="button"
-              class="btn btn-secondary mt-2"
-              data-toggle="modal"
-              data-target="#seatModal"
-            >
-              Pick a Seat
-            </button>
-          </div>
-          <div class="form-group">
-            <label for="travelclass">Travel Class:</label>
-            <select class="form-control" name="travelclass" id="travelclass">
-              <option value="Economy">Economy</option>
-              <option value="Business">Business</option>
-            </select>
-          </div>
-          <button type="button" class="btn btn-primary" onclick="navigate('previous')">Previous</button>
-          <button type="button" class="btn btn-primary" onclick="navigate('next')">Next</button>
+          <div class="card2 shadow">
+            <h2 class="c1 card-header">Seat Plan</h2>
+            <div class="card-body">
+              <div class="form-group">
+                <label for="seat">Selected Seat:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="seat"
+                  name="seat"
+                  readonly
+                  required
+                />
+                <button
+                  type="button"
+                  class="btn btn-secondary mt-2"
+                  data-toggle="modal"
+                  data-target="#seatModal"
+                >
+                  Pick a Seat
+                </button>
+              </div>
+              <div class="form-group">
+                <label for="travelclass">Travel Class:</label>
+                <select class="form-control" name="travelclass" id="travelclass">
+                  <option value="Economy">Economy</option>
+                  <option value="Business">Business</option>
+                </select>
+              </div>
+              </div>
+            </div>
         </div>
+      
         <!-- End of 3rd Form -->
 
         <!-- Summary -->
         <div id="summaryForm" class="booking-summary card">
           <h2 class="card-header text-center">Booking Summary</h2>
-          <input type="text" id="triptype" name="triptype" class="card-title form-control-plaintext" readonly/>
+          <input
+            type="text"
+            id="triptype"
+            name="triptype"
+            class="card-title form-control-plaintext"
+            readonly
+          />
           <div class="depart card-body">
-            <input type="text" id="code" name="departcodeid"class="card-title form-control-plaintext" readonly/>
+            <input
+              type="text"
+              id="code"
+              name="departcodeid"
+              class="card-title form-control-plaintext"
+              readonly
+            />
             <h4 id="showfname" class="card-title"></h4>
             <h4 id="showlname" class="card-title"></h4>
             <h4 id="showservice" class="card-title"></h4>
@@ -321,9 +522,15 @@
             <h4 id="showdeparture" class="card-title"></h4>
             <h4 id="showprice" class="card-title"></h4>
           </div>
-          <hr>
+          <hr />
           <div class="return card-body">
-            <input type="text" id="rcode" name="returncodeid"class="card-title form-control-plaintext" readonly/>
+            <input
+              type="text"
+              id="rcode"
+              name="returncodeid"
+              class="card-title form-control-plaintext"
+              readonly
+            />
             <h4 id="rlabel" class="card-title"></h4>
             <h4 id="rshowroute" class="card-title"></h4>
             <h4 id="rshowstartingLocation" class="card-title"></h4>
@@ -331,19 +538,17 @@
             <h4 id="rshowdeparture" class="card-title"></h4>
             <h4 id="rshowprice" class="card-title"></h4>
           </div>
-          <hr>
+          <hr />
           <div class="card-footer text-center">
             <h4 id="totalexp" class="card-title"></h4>
           </div>
-          <button type="button" class="btn btn-primary" onclick="navigate('previous')">Previous</button>
-          <button type="button" class="btn btn-primary" onclick="navigate('next')">Next</button>
         </div>
 
         <!-- /Summary -->
         <div id="paymentForm">
           <!-- Credit or Debit Card Section -->
           <h2>Payment Mode</h2>
-          <div class="card mb-4">
+          <div class="cards mb-4">
             <div class="card-header bg-warning text-white">
               Credit or Debit Card
             </div>
@@ -472,13 +677,36 @@
                   name="transactionId"
                 />
               </div>
-              <img src="/QRcode.svg" alt="QR Code" class="w-25 d-block mx-auto">
+              <img
+                src="/QRcode.svg"
+                alt="QR Code"
+                class="w-25 d-block mx-auto"
+              />
             </div>
           </div>
         </div>
-        
+
         <!-- Navigation buttons -->
-        <button type="submit" class="btn btn-primary mt-4" id="submitButton">Submit</button>
+        <div class="mt-4">
+          <button class="b1 btn btn-primary mt-4"
+            type="button"
+            class="btn btn-primary"
+            onclick="navigate('previous')"
+          >
+            Previous
+          </button>
+          <button class="b1 btn btn-primary mt-4"
+            type="button"
+            class="btn btn-primary"
+            onclick="navigate('next')"
+          >
+            Next
+          </button>
+        </div>
+
+        <button type="submit" class=" b1 btn btn-primary mt-4" id="submitButton">
+          Submit
+        </button>
       </form>
     </div>
 
@@ -540,6 +768,88 @@
           </div>
         </div>
       </div>
+    </div>
+
+<footer> 
+      <div class="fheading">
+        <div class="fcontent">
+          <h3>Get the latest news and Updates</h3>
+          <p>
+            Your trusted partner in travel, offering exceptional service and seamless experiences!
+          </p>
+        </div>
+        <div class="input-container">
+        <input type="text" autocomplete="off" name="text" class="input" placeholder="Enter Your Email Address!">
+        <button><span class="button_top"> Subscribe! </span></button>
+      </div>
+      </div>
+
+      <div class="footer">
+        <div class="main">
+            <div class="col">
+                <h4>BOOK</h4>
+                <ul>
+                    <li><a href="#Flights">Flights</a></li>
+                    <li><a href="#SeatSale">Seat Sale</a></li>
+                    <li><a href="#PassengerCargo">Passenger and Cargo</a></li>
+                    <li><a href="#AccountRegis">Account Registration</a></li>
+                    <li><a href="#Partner">Partner Agents</a></li>
+                </ul>
+            </div>
+            
+            <div class="col">
+                <h4>MANAGE</h4>
+                <ul>
+                    <li><a href="#Check In">Check In</a></li>
+                    <li><a href="#Manage Booking">Manage Booking</a></li>
+                    <li><a href="#Flight Status">Flight Status</a></li>
+                    <li><a href="#Add Ons">Add Ons</a></li>
+                    <li><a href="#Special">Special Assistance</a></li>
+                </ul>
+            </div>
+
+            <div class="col">
+                <h4>TRAVEL INFO</h4>
+                <ul>
+                    <li><a href="#Baggage Info">Baggage Info</a></li>
+                    <li><a href="#Payment Options">Payment Options</a></li>
+                    <li><a href="#Travel Advisories">Travel Advisories</a></li>
+                    <li><a href="#Booking">Booking and Check In</a></li>
+                    <li><a href="#Service Fee">Services Fee</a></li>
+                </ul>
+            </div>
+
+            <div class="col">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="#Explore">Explore</a></li>
+                    <li><a href="#Ph Destination">Philippine Destination</a></li>
+                    <li><a href="#City Guides">City Guides</a></li>
+                </ul>
+            </div>
+
+            <div class="col">
+                <h4>About</h4>
+                <ul>
+                    <li><a href="#About">About</a></li>
+                    <li><a href="#Our Story">Our Story</a></li>
+                    <li><a href="#Talk to Us">Talk to Us</a></li>
+                    <li><a href="#Campaign">Campaign and Partners</a></li>
+                </ul>
+            </div>
+
+            <div class="col">
+                <h4>Contact Us Here!</h4>
+                <div class="social">
+                <a href=""><i class='bx bxl-facebook'></i></a>
+                <a href=""><i class='bx bxl-instagram' ></i></a>
+                <a href=""><i class='bx bxl-twitter' ></i></a>
+                <a href=""><i class='bx bxl-youtube'></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </footer>
 
     <!-- Bootstrap JS, Popper.js, and jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -557,9 +867,7 @@
           $("#seat").val(selectedSeat);
           $("#seatModal").modal("hide");
         });
-
       });
     </script>
-    
   </body>
 </html>
