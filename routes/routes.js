@@ -192,6 +192,66 @@ router.post("/addFlight",async (req, res) =>{
     });
 });
 
+// Render the edit page
+router.get('/edit/:id', async (req, res) => {
+    try {
+        const flight = await Flight.findById(req.params.id);
+        if (!flight) {
+            req.session.message = {
+                type: 'danger',
+                message: 'Flight not found!'
+            };
+            return res.redirect('/flightList');
+        }
+        res.render('editFlight', { flight });
+    } catch (err) {
+        req.session.message = {
+            type: 'danger',
+            message: err.message
+        };
+        res.redirect('/flightList');
+    }
+});
+
+// Update flight
+router.post("/updateFlight/:id", async (req, res) => {
+    const flightId = req.params.id;
+    const startingLocation = req.body.startingLocation;
+    const destination = req.body.destination;
+
+    // Remove vowels and concatenate
+    let routecode = removeVowels(startingLocation).toUpperCase() + '-' + removeVowels(destination).toUpperCase();
+
+    try {
+        const flight = await Flight.findById(flightId);
+
+        if (!flight) {
+            req.session.message = {
+                type: 'danger',
+                message: 'Flight not found!'
+            };
+            return res.redirect('/flightList');
+        }
+
+        flight.startingLocation = startingLocation;
+        flight.destination = destination;
+        flight.routecode = routecode;
+        flight.departure = req.body.departure;
+        flight.timeFlight = req.body.timeFlight;
+        flight.price = req.body.price;
+
+        await flight.save();
+
+        req.session.message = {
+            type: 'success',
+            message: 'Flight updated successfully!'
+        };
+        res.redirect('/flightList');
+        console.log("Flight updated successfully!");
+    } catch (err) {
+        res.json({ message: err.message, type: 'danger' });
+    }
+});
 router.get('/search', async (req, res) => {
     const { from, to, departureDate, returnDate, tripType } = req.query;
     
