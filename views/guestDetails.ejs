@@ -13,6 +13,7 @@
     <link rel="stylesheet"href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link rel="stylesheet" href="guestDetails.css">
     <link rel="stylesheet" href="/formNavigator.css" />
+    <script src="/flightpayment.js"></script>
     <script async src="/formNavigator.js"></script>
     <script async src="/paymentMode.js"></script>
     <script async type="module" src="/getFlightInfo.js"></script>
@@ -185,6 +186,8 @@
                     class="form-control"
                     id="country"
                     name="country"
+                    list="clist"
+                    required
                   />
                 </div>
               </fieldset>
@@ -195,6 +198,7 @@
                   class="form-control"
                   id="nationality"
                   name="nationality"
+                  list="nationalities"
                   required
                 />
               </div>
