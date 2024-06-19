@@ -33,23 +33,25 @@ function navigate(direction) {
     // Update button visibility based on currentFormIndex
     if (currentFormIndex === 0) {
         // At the beginning, hide Previous button
-        document.querySelector('.btn.btn-primary[onclick="navigate(\'previous\')"]').style.display = 'none';
+        document.querySelector('#previousBtn').style.display = 'none';
     } else {
         // Show Previous button if not at the beginning
-        document.querySelector('.btn.btn-primary[onclick="navigate(\'previous\')"]').style.display = 'inline-block';
+        document.querySelector('#previousBtn').style.display = 'inline-block';
     }
 
     if (currentFormIndex === formSections.length - 1) {
         // At the last section, hide Next button and show Submit button
-        document.querySelector('.btn.btn-primary[onclick="navigate(\'next\')"]').style.display = 'none';
+        document.querySelector('#nextBtn').style.display = 'none';
         document.getElementById('submitButton').style.display = 'inline-block';
     } else {
         // Show Next button if not at the last section
-        document.querySelector('.btn.btn-primary[onclick="navigate(\'next\')"]').style.display = 'inline-block';
+        document.querySelector('#nextBtn').style.display = 'inline-block';
         document.getElementById('submitButton').style.display = 'none';
     }
     updateBookingSummary();
+    console.log(currentFormIndex)
 }
+
 
 let updateBookingSummary = () => {
     let firstname = document.querySelector("#firstname").value;
