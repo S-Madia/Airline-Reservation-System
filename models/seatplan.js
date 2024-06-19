@@ -7,7 +7,7 @@ const seatplanSchema = new Schema({
         required: true
     },
     travel_class:{
-        type: [String],
+        type: String,
         required: true,
     },
     seat_status:{

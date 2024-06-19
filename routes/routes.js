@@ -440,5 +440,30 @@ router.post("/submitDetails", async (req, res) => {
     }
 });
 
+
+router.get('/adminReservation', async (req, res) => {
+    try {
+        // Fetch all ReservationDetails and populate the passengerID with PersonalDetails and seatID with SeatPlan
+        const reservations = await ReservationDetails.find()
+            .populate({
+                path: 'passengerID',
+                model: 'PersonalDetails' // Make sure this matches the model name
+            })
+            .populate({
+                path: 'seatID',
+                model: 'seatDetails' // Make sure this matches the model name
+            })
+            .exec();
+
+        // Render the view, passing in the title and the list of reservations with populated passenger details
+        res.render("adminReservation", {
+            title: "Admin Reservation Page",
+            reservations: reservations
+        });
+    } catch (err) {
+        // Handle errors by sending a JSON response with the error message
+        res.json({ message: err.message });
+    }
+});
 // Export the router
 module.exports = router;

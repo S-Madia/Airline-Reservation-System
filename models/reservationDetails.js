@@ -9,23 +9,28 @@ const reservationDetailsSchema = new Schema({
     },
     flightID: {
         type: Schema.Types.ObjectId,
-        ref: 'flight',
+        ref: 'Flight',
         required: true
     },
     seatID: {
         type: Schema.Types.ObjectId,
-        ref: 'seatplan',
+        ref: 'seatDetails',
         required: true
     },
     transactionID: {
         type: Schema.Types.ObjectId,
-        ref: 'transactionDetails',
+        ref: 'TransactionDetails',
         required: true
     },
     flightType:{
         type: String,
         required: true,
         default: null
+    },
+    flightStatus:{
+        type: String,
+        required: true,
+        default: "Reserved"
     },
     reservationDate:{
         type: Date,
