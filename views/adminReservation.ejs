@@ -1,0 +1,34 @@
+<%- include('layout/adminHeader') %>
+<div class="container mt-5">
+    <h2>Reservations</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Reservation ID</th>
+                <th>Passenger Name</th>
+                <th>Flight ID</th>
+                <th>Seat ID</th>
+                <th>Travel Class</th>
+                <th>Transaction ID</th>
+                <th>Flight Type</th>
+                <th>Reservation Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% reservations.forEach(reservation => { %>
+                <tr>
+                    <td><%= reservation._id %></td>
+                    <td><%= reservation.passengerID.firstname %> <%= reservation.passengerID.lastname %></td>
+                    <td><%= reservation.flightID %></td>
+                    <td><%= reservation.seatID.seatID %></td>
+                    <td><%= reservation.seatID.travel_class %></td>
+                    <td><%= reservation.transactionID %></td>
+                    <td><%= reservation.flightType %></td>
+                    <td><%= reservation.reservationDate.toDateString() %></td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</div>
+
+<%- include('layout/footer') %>
