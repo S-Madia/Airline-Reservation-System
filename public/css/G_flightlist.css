@@ -554,6 +554,11 @@ footer{
     background: white;
   }
 
+.butt{
+  margin-left: 6em;
+}
+
+
 
 @media (max-width: 600px) {
     .cont1 {
