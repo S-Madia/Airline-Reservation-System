@@ -554,36 +554,103 @@ footer{
     background: white;
   }
 
-
-@media (max-width: 600px) {
-    .cont1 {
-        padding: 0 1em;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .cont1 ul {
-        padding: 0;
-        margin: 0;
-    }
-
-    .edit_details .Btn {
-        width: 100%;
-        justify-content: center;
-    }
-
-    .dep_cont {
-        flex-direction: column;
-        align-items: center;
-        padding-left: 0;
-    }
-
-    .card_cont {
-        width: 100%;
-    }
-
-    .card {
-        width: 90%;
-    }
+.butt{
+  margin-left: 6em;
 }
 
+
+
+
+@media (max-width: 991px) {
+  .cont1 {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .progress-bar {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .dep_cont {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .dep_cont div {
+      margin-bottom: 10px;
+  }
+}
+
+/* Mobile screens */
+@media (max-width: 767px) {
+  .cont1 {
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .cont1 > div {
+      width: 100%;
+      text-align: center;
+      margin: 10px 0;
+  }
+
+  .progress-bar {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .step {
+      margin-bottom: 20px;
+  }
+
+  .dep_cont {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .dep_cont div {
+      margin-bottom: 10px;
+  }
+
+  .row {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .flight-card {
+      width: 100%;
+  }
+
+  .butt {
+      width: 100%;
+      text-align: center;
+      padding: 15px;
+      font-size: 4vw;  /* Responsive font size for buttons on mobile */
+  }
+
+  .edit_details .Btn {
+      font-size: 4vw;  /* Responsive font size for buttons on mobile */
+  }
+
+  .card-body {
+      font-size: 4vw;  /* Responsive font size for card body text on mobile */
+  }
+}
+
+/* Additional Media Queries for Small Devices */
+@media (max-width: 480px) {
+  .card-body {
+      font-size: 3.5vw;  /* Smaller font size for very small devices */
+  }
+
+  .edit_details .Btn {
+      font-size: 3.5vw;  /* Smaller font size for buttons on very small devices */
+  }
+
+  .butt {
+      font-size: 3.5vw;  /* Smaller font size for buttons on very small devices */
+  }
+}

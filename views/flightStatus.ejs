@@ -80,10 +80,11 @@
               <div class="card-body">
                 <h2 class="card-title flightId"><%= flight._id %></h2>
                 <h2 class="card-title"><%= flight.routecode %></h2>
-                <p class="card-text"><strong>From:</strong> <%= flight.startingLocation %></p>
-                <p class="card-text"><strong>To:</strong> <%= flight.destination %></p>
-                <p class="card-text"><strong>Departure:</strong> <%= flight.departure.toDateString() %></p>
-                <p class="card-text"><strong>Time:</strong> <%= flight.timeFlight %></p>
+                <p class="card-text"><strong>Departing:</strong> <%= flight.startingLocation %></p>
+                <p class="card-text"><strong>Destination:</strong> <%= flight.destination %></p>
+                <i class="fa-solid fa-plane airp" style="color: #F5A614;"></i>
+                <p class="card-text"><strong>Departure Date:</strong> <%= flight.departure.toDateString() %></p>
+                <p class="card-text"><strong>Estimated Time:</strong> <%= flight.timeFlight %></p>
                 <p class="card-text"><strong>Price:</strong> ₱<%= flight.price %></p>
               </div>
             </div>
@@ -123,7 +124,7 @@
       </div>
     <% } %>
     
-    <button id="continueBtn" class="btn btn-primary mt-3">Continue</button>
+    <button id="continueBtn" class="btn btn-primary mt-3 butt">Continue</button>
   </div>
   
 </main>
