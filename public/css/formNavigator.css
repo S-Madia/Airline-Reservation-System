@@ -2,10 +2,10 @@
     display: block;
 }
 #secondForm,#thirdForm,#summaryForm,#paymentForm,#submitButton,
-.flightId,.hide{
+.flightId,.hide,.preBtn{
     display: none;
 }
-.additional-info {
+#additional-info {
     display: none;
     margin-top: 20px;
   }

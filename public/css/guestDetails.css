@@ -168,18 +168,10 @@ header {
 }
 
 .card {
-    
-    width: 80%;
     border-radius: 20px;
     margin: auto; /* Center the card horizontally */
     background-color: #ffffff;
     box-shadow: 20px 20px 60px black, -20px -20px 60px #ffffff;
-    position: absolute;
-    top: 12%;
-    left: 50%;
-    transform: translate(-50%);
-    display: flex;
-    flex-direction: column;
     justify-content: space-between;
     padding: 20px;
     overflow-y: auto; /* Allows vertical scrolling if necessary */
@@ -201,19 +193,28 @@ h1, h2, h3 {
 label {
     font-weight: bold;
 }
-
-.btn-primary {
-    background-color: #1A2061;
-    color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
+.btn-primary{
+  background-color: white;
+  color: black;
+  border-radius: 10em;
+  font-size: 17px;
+  font-weight: 600;
+  padding: 1em 2em;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid black;
+  box-shadow: 0 0 0 0 black;
 }
 
 .btn-primary:hover {
-    background-color: #000000;
-}
+  transform: translateY(-4px) translateX(-2px);
+  box-shadow: 2px 5px 0 0 black;
+};
+
+.btn-primary:active {
+  transform: translateY(2px) translateX(1px);
+  box-shadow: 0 0 0 0 black;
+};
 
 input[type="text"],
 input[type="email"],
