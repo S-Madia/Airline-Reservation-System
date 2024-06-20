@@ -187,7 +187,7 @@ router.post("/addFlight",async (req, res) =>{
         const destination = req.body.destination;
 
         // Remove vowels and concatenate
-        let routecode = removeVowels(startingLocation).toUpperCase() + '-' + removeVowels(destination).toUpperCase();
+        let routecode = removeVowels(startingLocation).toUpperCase() + '=>' + removeVowels(destination).toUpperCase();
  
     const flight = new Flight({
         startingLocation: req.body.startingLocation,
@@ -308,9 +308,9 @@ router.post("/submitDetails", async (req, res) => {
         // Get the user ID from the session
         const userId = req.session.userId;
 
-        if (!userId) {
-            return res.status(403).json({ message: "User ID not found in session", type: "danger" });
-        }
+        // if (!userId) {
+        //     return res.status(403).json({ message: "User ID not found in session", type: "danger" });
+        // }
         
         // Create a new PersonalDetails document
         const personalDetailsDoc = new PersonalDetails({
@@ -349,7 +349,7 @@ router.post("/submitDetails", async (req, res) => {
 
         const seatPlanDoc = new SeatPlan({
             seatID: req.body.seat,
-            travel_Class: req.body.travelclass,
+            travel_class: req.body.travelclass,
             seat_status: true
             
         });

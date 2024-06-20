@@ -11,6 +11,7 @@
                 <th>Travel Class</th>
                 <th>Transaction ID</th>
                 <th>Flight Type</th>
+                <th>Flight Status</th>
                 <th>Reservation Date</th>
             </tr>
         </thead>
@@ -24,6 +25,7 @@
                     <td><%= reservation.seatID.travel_class %></td>
                     <td><%= reservation.transactionID %></td>
                     <td><%= reservation.flightType %></td>
+                    <td><%= reservation.flightStatus %></td>
                     <td><%= reservation.reservationDate.toDateString() %></td>
                 </tr>
             <% }) %>
