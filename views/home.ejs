@@ -27,46 +27,48 @@
         <li class="menubar">
           <a href="#book">BOOK</a>
           <ul class="submenu">
-            <li><a href="#option1">Option 1</a></li>
-            <li><a href="#option2">Option 2</a></li>
-            <li><a href="#option3">Option 3</a></li>
+            <li><a href="#option1">Book With Us</a></li>
+            <li><a href="#option2">Flights</a></li>
+            <li><a href="#option3">Seat Sale</a></li>
           </ul>
         </li>
         <li class="menubar">
           <a href="#manage">MANAGE</a>
           <ul class="submenu">
-            <li><a href="#option1">Option 1</a></li>
-            <li><a href="#option2">Option 2</a></li>
-            <li><a href="#option3">Option 3</a></li>
+            <li><a href="#option1">Check In</a></li>
+            <li><a href="#option2">Flight Status</a></li>
+            <li><a href="#option3">Manage Book</a></li>
           </ul>
         </li>
         <li class="menubar">
           <a href="#infotravel">INFO TRAVEL</a>
           <ul class="submenu">
-            <li><a href="#option1">Option 1</a></li>
-            <li><a href="#option2">Option 2</a></li>
-            <li><a href="#option3">Option 3</a></li>
+            <li><a href="#option1">Payment Option</a></li>
+            <li><a href="#option2">Special Assistance</a></li>
+            <li><a href="#option3">Travel Documents</a></li>
           </ul>
         </li>
         <li class="menubar">
           <a href="#explore">EXPLORE</a>
           <ul class="submenu">
-            <li><a href="#option1">Option 1</a></li>
-            <li><a href="#option2">Option 2</a></li>
-            <li><a href="#option3">Option 3</a></li>
+            <li><a href="#option1">Philippine Destinations</a></li>
+            <li><a href="#option2">International Destinations</a></li>
+            <li><a href="#option3">City Guides</a></li>
           </ul>
         </li>
         <li class="menubar">
           <a href="#aboutus">ABOUT US</a>
-          <ul class="submenu">
-            <li><a href="#option1">Option 1</a></li>
-            <li><a href="#option2">Option 2</a></li>
-            <li><a href="#option3">Option 3</a></li>
-          </ul>
         </li>
         <li class="menubar">
           <button class="login-button" onclick="location.href='/login'">LOG IN</button>
         </li>
+        <li class="menubar">
+          <a href="#higuest" class="hi">Hi, Steven Kenth</a>
+        <ul class="submenus">
+          <li><a href="#option1">My Profile</a></li>
+          <li><a href="#option2">Log Out</a></li>
+        </ul>
+      </li>
       </ul>
     </header>
     <!-- End of Header -->
@@ -93,7 +95,7 @@
               </div>
             </div>
             <div class="carousel-item">
-              <img src="https://images.unsplash.com/photo-1513875528452-39400945934d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block w-100" alt="...">
+              <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2073&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block w-100" alt="...">
               <div class="carousel-caption d-none d-md-block">
                 <h5>Third slide label</h5>
                 <p>BORACAY</p>
@@ -122,23 +124,31 @@
                     <option value="round-trip">Round-trip</option>
                 </select>
             </div>
-            <div class="search-bar">
+            <div class="input-wrapper">
+              <div class="search-bar">
                 <label for="from">From:</label>
                 <input type="text" id="from_airport" name="from" placeholder="Enter Starting Location" list="airport" maxlength="30" required>
             </div>
-            <div class="search-bar">
+            </div>
+            <div class="input-wrapper">
+              <div class="search-bar">
                 <label for="to">To:</label>
                 <input type="text" id="to_airport" name="to" placeholder="Enter Destination" list="airport" maxlength="30" required>
             </div>
+            </div>
+            <div class="input-wrapper">
             <div class="date-section">
                 <label for="from-date">Depart:</label>
                 <input type="text" id="from-date" name="departureDate" placeholder="Select Departure Date" required>
             </div>
+            </div>
+            <div class="input-wrapper">
             <div class="date-section" id="return-date-section">
                 <label for="to-date">Return:</label>
                 <input type="text" id="to-date" name="returnDate" placeholder="Select Return Date">
             </div>
-            <button type="submit" class="searchBtn type1" onclick="setFlight()">Search Flights</button>
+          </div>
+            <button type="submit" class="searchBtn type1 submitbutton" onclick="setFlight()">Search Flights</button>
         </form>
     </div>
       
