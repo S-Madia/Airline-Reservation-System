@@ -2,7 +2,7 @@
 let currentFormIndex = 0;
 
 // Array of form section IDs in order
-const formSections = ['firstForm', 'secondForm', 'thirdForm','summaryForm', 'paymentForm'];
+const formSections = ['firstForm', 'secondForm', 'thirdForm', 'summaryForm', 'paymentForm'];
 
 // Function to navigate between form sections
 function navigate(direction) {
@@ -19,6 +19,9 @@ function navigate(direction) {
 
     // Hide the current form section
     document.getElementById(formSections[currentFormIndex]).style.display = 'none';
+
+    // Update step class before changing the index
+    updateStepClass(currentFormIndex, direction);
 
     // Update currentFormIndex based on direction
     if (direction === 'next') {
@@ -48,11 +51,40 @@ function navigate(direction) {
         document.querySelector('#nextBtn').style.display = 'inline-block';
         document.getElementById('submitButton').style.display = 'none';
     }
+    
+    // Update the booking summary if applicable
     updateBookingSummary();
-    console.log(currentFormIndex)
+    console.log(currentFormIndex);
 }
 
+// Function to update step classes in the progress bar
+function updateStepClass(stepIndex, direction) {
+    const stepIds = ['step-guestDetails', 'step-addOns', 'step-addOns', 'step-payment', 'step-payment'];
+    
+    if (direction === 'next' && stepIndex < stepIds.length - 1) {
+        const currentStep = document.getElementById(stepIds[stepIndex]);
+        const nextStep = document.getElementById(stepIds[stepIndex + 1]);
+        
+        if (currentStep) {
+            currentStep.classList.remove('completed');
+        }
+        if (nextStep) {
+            nextStep.classList.add('completed');
+        }
+    } else if (direction === 'previous' && stepIndex > 0) {
+        const currentStep = document.getElementById(stepIds[stepIndex]);
+        const prevStep = document.getElementById(stepIds[stepIndex - 1]);
+        
+        if (currentStep) {
+            currentStep.classList.remove('completed');
+        }
+        if (prevStep) {
+            prevStep.classList.add('completed');
+        }
+    }
+}
 
+// Function to update the booking summary
 let updateBookingSummary = () => {
     let firstname = document.querySelector("#firstname").value;
     let lastname = document.querySelector("#lastname").value;
