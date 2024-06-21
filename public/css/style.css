@@ -44,6 +44,12 @@ header {
   height: 10%;
 }
 
+.hi{
+  color: #e8f0f7;
+  font-size: .5rem;
+  font-weight: 500;
+}
+
 .logo {
   color: #e8f0f7;
   font-weight: 600;
@@ -81,6 +87,42 @@ header {
   position: relative;
 }
 
+
+.submenus {
+  display: none; /* Hide submenu by default */
+  list-style-type: none;
+  position: absolute;
+  background-color: #ffffff; /* Background color of the submenu */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add a shadow for a dropdown effect */
+  padding: 1rem;
+  width: 170px;
+  top: 100%; /* Position below the parent li */
+  left: 50%; /* Position at the center of the parent li */
+  transform: translateX(-50%); /* Center the submenu */
+  border-radius: 10px; /* Add border radius */
+}
+
+.menubar:hover .submenus {
+  display: block; /* Show submenu when hovering over parent li */
+}
+
+.submenus li {
+  color: #300440;
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.submenus li a {
+  color: #300440;
+  text-decoration: none;
+}
+
+.submenus li a:hover {
+  color: orange;
+}
+
+
 .submenu {
   display: none; /* Hide submenu by default */
   list-style-type: none;
@@ -88,7 +130,7 @@ header {
   background-color: #ffffff; /* Background color of the submenu */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add a shadow for a dropdown effect */
   padding: 1rem;
-  width: 200px;
+  width: 290px;
   top: 100%; /* Position below the parent li */
   left: 50%; /* Position at the center of the parent li */
   transform: translateX(-50%); /* Center the submenu */
@@ -262,7 +304,7 @@ input[type="text"] {
 }
 
 .searchBtn {
-    width: 700px;
+    width: 900px;
     padding: 10px;
     color: #30292F;
     cursor: pointer;
@@ -299,7 +341,7 @@ input[type="text"] {
 .hcard-container{
   display: flex;
   flex-wrap: wrap;
-  background: white;
+  background: #e8f0f7;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -599,4 +641,63 @@ button:active .button_top {
       width: 100%; /* Make inputs take full width on small screens */
   }
 }
+
+.input-wrapper input {
+  background-color: #eee;
+  border: none;
+  padding: 1rem;
+  font-size: 1rem;
+  width: 20em;
+  border-radius: 1rem;
+  color: lightcoral;
+  box-shadow: 0 0.4rem #dfd9d9;
+  cursor: pointer;
+}
+
+.input-wrapper input {
+  outline-color: lightcoral;
+}
+
+.submitbutton{
+  appearance: none;
+  background-color: transparent;
+  border: 0.125em solid #1A1A1A;
+  border-radius: 0.9375em;
+  box-sizing: border-box;
+  color: #3B3B3B;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0;
+  min-height: 3.75em;
+  min-width: 0;
+  outline: none;
+  padding: 1em 2.3em;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  will-change: transform;
+ }
+ 
+.submitbutton:disabled {
+  pointer-events: none;
+ }
+ 
+.submitbutton:hover {
+  color: #fff;
+  background-color: #1A1A1A;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+ }
+ 
+.submitbutton:active {
+  box-shadow: none;
+  transform: translateY(0);
+ }
 

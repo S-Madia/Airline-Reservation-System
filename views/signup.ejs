@@ -9,15 +9,32 @@
 </head>
 <body>
     <div class="form-container">
+        <button class="button" onclick="window.location.href='/login'">
+            <div class="button-box">
+              <span class="button-elem">
+                <svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M46 20.038c0-.7-.3-1.5-.8-2.1l-16-17c-1.1-1-3.2-1.4-4.4-.3-1.2 1.1-1.2 3.3 0 4.4l11.3 11.9H3c-1.7 0-3 1.3-3 3s1.3 3 3 3h33.1l-11.3 11.9c-1 1-1.2 3.3 0 4.4 1.2 1.1 3.3.8 4.4-.3l16-17c.5-.5.8-1.1.8-1.9z"
+                  ></path>
+                </svg>
+              </span>
+              <span class="button-elem">
+                <svg viewBox="0 0 46 40">
+                  <path
+                    d="M46 20.038c0-.7-.3-1.5-.8-2.1l-16-17c-1.1-1-3.2-1.4-4.4-.3-1.2 1.1-1.2 3.3 0 4.4l11.3 11.9H3c-1.7 0-3 1.3-3 3s1.3 3 3 3h33.1l-11.3 11.9c-1 1-1.2 3.3 0 4.4 1.2 1.1 3.3.8 4.4-.3l16-17c.5-.5.8-1.1.8-1.9z"
+                  ></path>
+                </svg>
+              </span>
+            </div>
+          </button>
         <h2>Sign Up</h2>
         <form action="/signup" method="post">
-            <a href="/login" >Back</a>
             <div class="form-group">
-                <label for="username">Firstame:</label>
+                <label for="username">First Name:</label>
                 <input type="text" id="firstname" name="firstname" placeholder="Enter your Firstname" autocomplete="off" required>
             </div>
             <div class="form-group">
-                <label for="username">Lastname:</label>
+                <label for="username">Last Name:</label>
                 <input type="text" id="lastname" name="lastname" placeholder="Enter your Lastname" autocomplete="off" required>
             </div>
             <div class="form-group">
