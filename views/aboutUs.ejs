@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet"href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
-    <link rel="stylesheet" href="/public/css/aboutUs.css">
+    <link rel="stylesheet" href="/aboutUs.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us</title>
@@ -25,7 +25,7 @@
         <a href="#book">BOOK</a>
         <ul class="submenu">
           <li><a href="#option1">Book With Us</a></li>
-          <li><a href="#option2">Flights</a></li>
+          <li><a href="/reservationlist">Flights</a></li>
           <li><a href="#option3">Seat Sale</a></li>
         </ul>
       </li>
@@ -57,20 +57,20 @@
         <a href="#aboutus">ABOUT US</a>
       </li>
       <li class="menubar">
-        <a href="#higuest" class="hi">Hi, Steven Kenth</a>
+        <button class="login-button" onclick="location.href='/login'"><%= logstatus%></button>
+      </li>
+      <li class="menubar">
+        <a href="#higuest" class="hi">Welcome, <%= name %></a>
       <ul class="submenus">
         <li><a href="#option1">My Profile</a></li>
         <li><a href="#option2">Log Out</a></li>
       </ul>
     </li>
-      <li class="menubar">
-        <button class="login-button" onclick="location.href='/login'">LOG IN</button>
-      </li>
     </ul>
   </header>
 
     <section id ="Things about me" class="section2">
-    <img class="profile-img" src="/public/images/flightxpress.svg" alt="Your Name - Photographer">
+    <img class="profile-img" src="/flightxpress.svg" alt="Your Name - Photographer">
     <h1 class="h1A" class="name1"> About Us</h1>
     <h2 class="title2">Flight Xpress</h2>
     <h2 style="margin-top: 20px;">GET TO KNOW US</h2>

@@ -83,6 +83,16 @@ router.get("/signup", (req, res) => {
 router.get("/transaction", (req, res) => {
     res.render("transaction");
 });
+router.get("/aboutUs", (req, res) => {
+    const name = req.session.email; 
+     // Check if 'name' is null, undefined, or an empty string
+     if (!name) {
+        res.render("aboutUs", { name: "Guest", logstatus: "LOGIN" });
+    } else {
+        res.render("aboutUs", { name: name, logstatus: "LOGOUT" });
+    }
+    
+});
 router.get("/addFlight", (req, res) => {
     res.render("addFlight");
 });
