@@ -73,6 +73,9 @@ router.get("/", async (req, res)=>{
 router.get("/signup", (req, res) => {
     res.render("signup");
 });
+router.get("/transaction", (req, res) => {
+    res.render("transaction");
+});
 router.get("/addFlight", (req, res) => {
     res.render("addFlight");
 });
@@ -433,7 +436,7 @@ router.post("/submitDetails", async (req, res) => {
             message: 'Details submitted successfully!'
         };
 
-        res.redirect('/');
+        res.redirect('/transaction');
         console.log("Details submitted successfully!");
     } catch (err) {
         res.status(500).json({ message: err.message, type: 'danger' });
