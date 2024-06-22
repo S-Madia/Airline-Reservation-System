@@ -208,6 +208,7 @@ header {
     box-shadow: 5px 5px 0px #be8823;
     transition-duration: .3s;
     font-family: "Roboto Condensed", sans-serif;
+    font-size: 1.25vw;
 }
 
 .svg {
@@ -351,6 +352,16 @@ h6 {
 
 .progress-bar {
     margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #F5A614;
+    padding: 1em 2em;
+    border-radius: 7.5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.progress-bar1 {
+    margin-top: 1rem;
     display: flex;
     flex-direction: row;
     align-items: center;

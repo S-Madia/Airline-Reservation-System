@@ -207,6 +207,7 @@ header {
     border-radius: 10px;
     box-shadow: 5px 5px 0px #be8823;
     transition-duration: .3s;
+    font-size: 1.2vw;
     font-family: "Roboto Condensed", sans-serif;
 }
 
