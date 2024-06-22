@@ -465,5 +465,10 @@ router.get('/adminReservation', async (req, res) => {
         res.json({ message: err.message });
     }
 });
+
+// router.use((req, res) =>{
+//     res.sendStatus(404).render()
+// })
+
 // Export the router
 module.exports = router;
