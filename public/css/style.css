@@ -17,19 +17,7 @@ body {
   padding-top: 60px;
 }
 
-.header{
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 100%;
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 30px 170px;
-  background: #1A2061;
-  height: 10%;
-}
+
 header {
   position: fixed;
   top: 0;
@@ -634,7 +622,7 @@ button:active .button_top {
   font-size: 1rem;
   width: 20em;
   border-radius: 1rem;
-  color: lightcoral;
+  color: black;
   box-shadow: 0 0.4rem #dfd9d9;
   cursor: pointer;
 }
