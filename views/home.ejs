@@ -21,7 +21,7 @@
   <body>
     <!-- Start of Header -->
     <header>
-      <a href="/" class="logo">AIRPLANE</a>
+      <a href="#" class="logo">AIRPLANE</a>
       <div class="bx bx-menu" id="menu-icon"></div>
       <ul class="navbar">
         <li class="menubar">
@@ -60,10 +60,10 @@
           <a href="#aboutus">ABOUT US</a>
         </li>
         <li class="menubar">
-          <button class="login-button" onclick="location.href='/login'">LOG IN</button>
+          <button class="login-button" onclick="location.href='/login'"><%= logstatus%></button>
         </li>
         <li class="menubar">
-          <a href="#higuest" class="hi">Hi, Steven Kenth</a>
+          <a href="#higuest" class="hi">Welcome, <%= name %></a>
         <ul class="submenus">
           <li><a href="#option1">My Profile</a></li>
           <li><a href="#option2">Log Out</a></li>

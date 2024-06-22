@@ -11,6 +11,7 @@ const TransactionDetails = require('../models/transactionDetails.js');
 const ReservationDetails = require('../models/reservationDetails.js');
 const ServiceDetails =  require('../models/services_model.js');
 const bcrypt = require('bcryptjs');
+const toast = require('toastify-js');
 //method for routecode
 function removeVowels(str) {
     return str.replace(/[aeiouAEIOU]/g, '');
@@ -68,7 +69,7 @@ router.get('/flight/:id', async (req, res) => {
 // });
 
 router.get("/", async (req, res)=>{
-    res.render("home");
+    res.render("home", {name: "Guest",logstatus: "LOGIN"});
 })
 router.get("/signup", (req, res) => {
     res.render("signup");
@@ -117,7 +118,7 @@ router.post('/login', async (req, res)=>{
         const check =await User.findOne({email: req.body.email})
 
         if(!check){
-            res.send("Account not Found");
+            res.json({message:"Account not Found"});
             console.log("Account not Found");
             return
         }
@@ -127,10 +128,10 @@ router.post('/login', async (req, res)=>{
             if (req.body.email === "admin@gmail.com") {
                 res.redirect("adminpage"); // Redirect to admin page
             } else {
-                res.render("home"); // Render home page
+                res.render("home", {name: check.email, logstatus: "LOGOUT"}); // Render home page
             }
         }else{
-            res.send("Wrong password");
+            res.json({message: "Wrong password"})
         }
     }catch{
         res.send("Wrong Details");
