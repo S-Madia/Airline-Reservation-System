@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation List</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <% reservationsByPersonalDetails.forEach(entry => { %>
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h2>Reservation List for <%= entry.personalDetails.firstname %> <%= entry.personalDetails.lastname %></h2>
+                </div>
+                <div class="card-body">
+                    <table class="table table-bordered table-striped">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>Reservation Date</th>
+                                <th>Flight Type</th>
+                                <th>Flight Status</th>
+                                <th>Flight ID</th>
+                                <th>Seat ID</th>
+                                <th>Travel Class</th>
+                                <th>Transaction ID</th>
+                                <th>Price</th>
+                                <th>Route Code</th>
+                                <th>Departure Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% entry.reservations.forEach(reservation => { %>
+                                <tr>
+                                    <td><%= reservation.reservationDate ? reservation.reservationDate.toDateString() : 'N/A' %></td>
+                                    <td><%= reservation.flightType %></td>
+                                    <td><%= reservation.flightStatus %></td>
+                                    <td><%= reservation.flightID ? reservation.flightID._id : 'N/A' %></td>
+                                    <td><%= reservation.seatID ? reservation.seatID.seatID : 'N/A' %></td>
+                                    <td><%= reservation.seatID ? reservation.seatID.travel_class : 'N/A' %></td>
+                                    <td><%= reservation.transactionID ? reservation.transactionID._id : 'N/A' %></td>
+                                    <td><%= reservation.flightID ? reservation.flightID.price : 'N/A' %></td>
+                                    <td><%= reservation.flightID ? reservation.flightID.routecode : 'N/A' %></td>
+                                    <td><%= reservation.flightID && reservation.flightID.departure ? reservation.flightID.departure.toDateString() : 'N/A' %></td>
+                                </tr>
+                            <% }) %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+    <!-- Include Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

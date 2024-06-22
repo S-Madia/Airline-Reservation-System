@@ -68,18 +68,29 @@ router.get('/flight/:id', async (req, res) => {
 // });
 
 router.get("/", async (req, res)=>{
-    res.render("home", {name: "Guest",logstatus: "LOGIN"});
+    const name = req.session.email; 
+     // Check if 'name' is null, undefined, or an empty string
+     if (!name) {
+        res.render("home", { name: "Guest", logstatus: "LOGIN" });
+    } else {
+        res.render("home", { name: name, logstatus: "LOGOUT" });
+    }
+   
 })
 router.get("/signup", (req, res) => {
     res.render("signup");
+});
+router.get("/transaction", (req, res) => {
+    res.render("transaction");
 });
 router.get("/addFlight", (req, res) => {
     res.render("addFlight");
 });
 router.get("/guestDetails", (req, res) => {
-    const userId = req.session.userId;
+    const userId = req.session.userId;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
     res.render('guestDetails', { userId: userId });
 });
+
 
 router.post('/signup', async (req, res) => { // Corrected async placement
     const user = new User({
@@ -124,6 +135,7 @@ router.post('/login', async (req, res)=>{
         const isPasswordMatch =  await bcrypt.compare(req.body.password, check.password);
         if(isPasswordMatch){
             req.session.userId = check._id;
+            req.session.email = check.email;
             if (req.body.email === "admin@gmail.com") {
                 res.redirect("adminpage"); // Redirect to admin page
             } else {
@@ -433,7 +445,7 @@ router.post("/submitDetails", async (req, res) => {
             message: 'Details submitted successfully!'
         };
 
-        res.redirect('/');
+        res.redirect('/transaction');
         console.log("Details submitted successfully!");
     } catch (err) {
         res.status(500).json({ message: err.message, type: 'danger' });
@@ -466,9 +478,64 @@ router.get('/adminReservation', async (req, res) => {
     }
 });
 
-router.use((req, res) =>{
-    res.status(404).render('error')
-})
+// router.use((req, res) =>{
+//     res.status(404).render('error')
+// })
+router.get('/reservationlist', async (req, res) => {
+    try {
+        const userId = req.session.userId;
+
+        if (!userId) {
+            return res.status(401).send('User not logged in');
+        }
+
+        // Fetch all personal details for the given user ID
+        const allPersonalDetails = await PersonalDetails.find({ user: userId }).lean();
+
+        if (!allPersonalDetails || allPersonalDetails.length === 0) {
+            return res.status(404).send('No Reservation found for the user');
+        }
+
+        // Array to hold all reservations grouped by personalDetails
+        const reservationsByPersonalDetails = [];
+
+        // Iterate over each personalDetails and fetch reservations
+        for (const personalDetails of allPersonalDetails) {
+            const reservations = await ReservationDetails.find({ passengerID: personalDetails._id })
+                .populate({
+                    path: 'passengerID',
+                    model: 'PersonalDetails'
+                })
+                .populate({
+                    path: 'seatID',
+                    model: 'seatDetails'
+                })
+                .populate({
+                    path: 'transactionID',
+                    model: 'TransactDetails'
+                })
+                .populate({
+                    path: 'flightID',
+                    model: 'Flight'
+                })
+                .exec();
+
+            reservationsByPersonalDetails.push({
+                personalDetails: personalDetails,
+                reservations: reservations
+            });
+        }
+
+        // Render the view, passing in the array of reservations grouped by personalDetails
+        res.render("reservationlist", {
+            reservationsByPersonalDetails: reservationsByPersonalDetails
+        });
+
+    } catch (err) {
+        // Handle errors by sending a JSON response with the error message
+        res.json({ message: err.message });
+    }
+});
 
 // Export the router
 module.exports = router;
