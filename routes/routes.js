@@ -11,7 +11,6 @@ const TransactionDetails = require('../models/transactionDetails.js');
 const ReservationDetails = require('../models/reservationDetails.js');
 const ServiceDetails =  require('../models/services_model.js');
 const bcrypt = require('bcryptjs');
-const toast = require('toastify-js');
 //method for routecode
 function removeVowels(str) {
     return str.replace(/[aeiouAEIOU]/g, '');
