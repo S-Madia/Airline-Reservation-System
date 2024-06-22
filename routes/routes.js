@@ -58,15 +58,6 @@ router.get('/flight/:id', async (req, res) => {
       res.status(500).send('Internal server error');
     }
   });
-// Define routes
-// router.get("/", async (req, res) => {
-//     try {
-//         const users = await User.find(); // Fetch all users from the database
-//         res.render("login", { users }); // Pass the users to the view
-//     } catch (err) {
-//         res.status(500).json({ message: err.message });
-//     }
-// });
 
 router.get("/", async (req, res)=>{
     const name = req.session.email; 
@@ -330,9 +321,6 @@ router.post("/submitDetails", async (req, res) => {
         // Get the user ID from the session
         const userId = req.session.userId;
 
-        // if (!userId) {
-        //     return res.status(403).json({ message: "User ID not found in session", type: "danger" });
-        // }
         
         // Create a new PersonalDetails document
         const personalDetailsDoc = new PersonalDetails({
@@ -488,9 +476,7 @@ router.get('/adminReservation', async (req, res) => {
     }
 });
 
-// router.use((req, res) =>{
-//     res.status(404).render('error')
-// })
+
 router.get('/reservationlist', async (req, res) => {
     try {
         const userId = req.session.userId;
@@ -546,6 +532,10 @@ router.get('/reservationlist', async (req, res) => {
         res.json({ message: err.message });
     }
 });
+
+router.use((req, res) =>{
+    res.status(404).render('error')
+})
 
 // Export the router
 module.exports = router;
