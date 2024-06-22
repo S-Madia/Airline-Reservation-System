@@ -53,23 +53,20 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
 // Autocomplete Function
-// Will Change cities next time
   document.addEventListener('DOMContentLoaded', function(){
         const fromport = document.querySelector("#from_airport");
         const toport = document.querySelector("#to_airport");
+      
         const cities = [
-            "Pampanga", "Davao", "Iloilo", "Aklan",
-            "Ilocos Norte", "Lapu-Lapu City", "Pasay/Parañaque",
-            "Puerto Princesa", "Silay", "Daraga", "Panglao",
-            "Butuan", "Cauayan", "Datu Odin Sinsuat", "Tacloban",
-            "Dipolog", "Sibulan", "General Santos", "Malay / Nabas",
-            "Ozamiz", "Languindingan", "Pili", "Pagadian", "Roxas",
-            "Bongao", "San Jose", "Morong", "Tuguegarao", "Zamboanga City",
-            "Basco", "Calbayog", "Mambajao", "Catarman", "Magsaysay",
-            "San Jose de Buenavista", "Coron", "Jolo", "Baguio",
-            "Gasan", "Masbate City", "Ormoc", "Cavite City", "San Vicente",
-            "Del Carmen", "Surigao City", "Tandag", "Alcantara", "Virac"
-        ];
+          "Alcantara - TBH", "Aklan - KLO", "Baguio - BAG", "Basco - BSO", "Bongao - TWT",
+          "Butuan - BXU", "Catarman - CRM", "Cavite City - SGL", "Cauayan - CYZ", "Coron - USU",
+          "Datu Odin Sinsuat - CBO", "Davao - DVO", "Del Carmen - IAO", "Dipolog - DPL", "Gasan - MRQ",
+          "General Santos - GES", "Ilocos Norte - LAO", "Iloilo - ILO", "Jolo - JOL", "Languindingan - CGY",
+          "Lapu-Lapu City - CEB", "Magsaysay - CYU", "Mambajao - CGM", "Malay / Nabas - MPH", "Morong - SFS",
+          "Ormoc - OMC", "Ozamiz - OZC", "Pampanga - CRK", "Panglao - TAG", "Pasay/Parañaque - MNL",
+          "Pili - WNP", "Puerto Princesa - PPS", "Roxas - RXS", "San Jose - SJI", "San Jose de Buenavista - EUQ",
+          "San Vicente - SWL", "Sibulan - DGT", "Silay - BCD", "Surigao City - SUG", "Tandag - TDG",
+          "Tacloban - TAC", "Tuguegarao - TUG", "Virac - VRC", "Zamboanga City - ZAM"]
     
         const dlist = document.createElement("datalist");
         const opval = document.createElement("option");

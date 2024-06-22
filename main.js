@@ -3,6 +3,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const session = require('express-session');
 const path = require('path');
+const store = new session.MemoryStore();
 
 // Initialize Express application
 const app = express();
@@ -19,8 +20,10 @@ app.use(express.json());
 
 app.use(session({
     secret: process.env.SESSION_SECRET || "my secret key", // Use an environment variable for the session secret if possible
-    saveUninitialized: true,
+    saveUninitialized: false,
     resave: false,
+    cookie: {maxAge:1.44e+7},
+    store
 }));
 
 app.use((req, res, next) => {

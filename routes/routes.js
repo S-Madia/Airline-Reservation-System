@@ -12,9 +12,10 @@ const ReservationDetails = require('../models/reservationDetails.js');
 const ServiceDetails =  require('../models/services_model.js');
 const bcrypt = require('bcryptjs');
 //method for routecode
-function removeVowels(str) {
-    return str.replace(/[aeiouAEIOU]/g, '');
+const citycode=(str)=>{
+    return str.slice(-3);
 }
+
 // Endpoint to get flight information by ID
 router.get('/flight/:id', async (req, res) => {
     try {
@@ -154,8 +155,9 @@ router.post('/login', async (req, res)=>{
         }else{
             res.json({message: "Wrong password"})
         }
-    }catch{
+    }catch(err){
         res.send("Wrong Details");
+        console.log(err)
     }
 
 }).get("/login", (req, res)=>{
@@ -206,10 +208,8 @@ router.get('/delete/:id', async (req, res)=>{
 
 router.post("/addFlight",async (req, res) =>{
     const startingLocation = req.body.startingLocation;
-        const destination = req.body.destination;
-
-        // Remove vowels and concatenate
-        let routecode = removeVowels(startingLocation).toUpperCase() + '=>' + removeVowels(destination).toUpperCase();
+    const destination = req.body.destination;
+    let routecode = citycode(startingLocation).toUpperCase() + "=>" + citycode(destination).toUpperCase();
  
     const flight = new Flight({
         startingLocation: req.body.startingLocation,
@@ -260,8 +260,8 @@ router.post("/updateFlight/:id", async (req, res) => {
     const startingLocation = req.body.startingLocation;
     const destination = req.body.destination;
 
-    // Remove vowels and concatenate
-    let routecode = removeVowels(startingLocation).toUpperCase() + '-' + removeVowels(destination).toUpperCase();
+    let routecode = citycode(startingLocation).toUpperCase() + "=>" + citycode(destination).toUpperCase();
+
 
     try {
         const flight = await Flight.findById(flightId);
