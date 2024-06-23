@@ -20,7 +20,6 @@ let setFlight = () => {
     localStorage.setItem("dreturn", dreturn);
     localStorage.setItem("tripType", tripType);
 
-    console.log("Flight information set:", from, to, depart, dreturn, tripType);
 };
 
 // Function to update flight information in the subheader

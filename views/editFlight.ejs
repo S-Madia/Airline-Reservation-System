@@ -17,26 +17,85 @@
     <form action="/updateFlight/<%= flight._id %>" method="post">
         <div class="form-group">
             <label for="startingLocation">Starting Location</label>
-            <input type="text" class="form-control" id="startingLocation" name="startingLocation" value="<%= flight.startingLocation %>" required>
+            <input 
+            type="text" 
+            class="form-control" 
+            id="startingLocation" 
+            name="startingLocation" 
+            value="<%= flight.startingLocation %>" 
+            list="airport"
+            maxlength="30" 
+            required>
         </div>
         <div class="form-group">
             <label for="destination">Destination</label>
-            <input type="text" class="form-control" id="destination" name="destination" value="<%= flight.destination %>" required>
+            <input 
+            type="text" 
+            class="form-control" 
+            id="destination" 
+            name="destination" 
+            value="<%= flight.destination %>" 
+            list="airport" 
+            required>
         </div>
         <div class="form-group">
             <label for="departure">Departure Date</label>
-            <input type="date" class="form-control" id="departure" name="departure" value="<%= flight.departure.toISOString().split('T')[0] %>" required>
+            <input 
+            type="date" 
+            class="form-control" 
+            id="departure" 
+            name="departure" 
+            value="<%= flight.departure.toISOString().split('T')[0] %>" 
+            required>
         </div>
         <div class="form-group">
             <label for="timeFlight">Flight Time</label>
-            <input type="text" class="form-control" id="timeFlight" name="timeFlight" value="<%= flight.timeFlight %>" required>
+            <input 
+            type="text" 
+            class="form-control" 
+            id="timeFlight" 
+            name="timeFlight" 
+            value="<%= flight.timeFlight %>" 
+            required>
         </div>
         <div class="form-group">
             <label for="price">Price</label>
-            <input type="number" class="form-control" id="price" name="price" value="<%= flight.price %>" required>
+            <input 
+            type="number" 
+            class="form-control" 
+            id="price" 
+            name="price" 
+            value="<%= flight.price %>" 
+            required>
         </div>
         <button type="submit" class="btn btn-primary">Update Flight</button>
     </form>
 </div>
+
+<script>
+    const startflight = document.querySelector("#startingLocation");
+    const destflight = document.querySelector("#destination");
+    const cities = [
+          "Alcantara - TBH", "Aklan - KLO", "Baguio - BAG", "Basco - BSO", "Bongao - TWT",
+          "Butuan - BXU", "Catarman - CRM", "Cavite City - SGL", "Cauayan - CYZ", "Coron - USU",
+          "Datu Odin Sinsuat - CBO", "Davao - DVO", "Del Carmen - IAO", "Dipolog - DPL", "Gasan - MRQ",
+          "General Santos - GES", "Ilocos Norte - LAO", "Iloilo - ILO", "Jolo - JOL", "Languindingan - CGY",
+          "Lapu-Lapu City - CEB", "Magsaysay - CYU", "Mambajao - CGM", "Malay / Nabas - MPH", "Morong - SFS",
+          "Ormoc - OMC", "Ozamiz - OZC", "Pampanga - CRK", "Panglao - TAG", "Pasay/Parañaque - MNL",
+          "Pili - WNP", "Puerto Princesa - PPS", "Roxas - RXS", "San Jose - SJI", "San Jose de Buenavista - EUQ",
+          "San Vicente - SWL", "Sibulan - DGT", "Silay - BCD", "Surigao City - SUG", "Tandag - TDG",
+          "Tacloban - TAC", "Tuguegarao - TUG", "Virac - VRC", "Zamboanga City - ZAM"]
+    
+        const dlist = document.createElement("datalist");
+        const opval = document.createElement("option");
+        dlist.setAttribute("id", "airport")
+        startflight.insertAdjacentElement("afterend", dlist);
+        destflight.insertAdjacentElement("afterend", dlist.cloneNode(true));
+        
+        for(let i=0; i < cities.length; i++){
+            opval.setAttribute("value", cities[i]);
+            dlist.appendChild(opval.cloneNode(true));
+        }
+</script>
 
 <%- include('layout/footer') %>
