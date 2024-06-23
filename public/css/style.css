@@ -45,6 +45,11 @@ header {
   text-decoration: none;
 }
 
+.logo img{
+  width: 66%;
+  
+}
+
 .navbar {
   display: flex;
   padding-top: 25px;
