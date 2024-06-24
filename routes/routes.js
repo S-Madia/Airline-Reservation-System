@@ -15,7 +15,6 @@ router.get("/", async (req, res)=>{
     } else {
         res.render("home", { name: name, logstatus: "LOGOUT" });
     }
-    console.log(req.session.id)
 })
 router.get("/signup", (req, res) => {
     res.render("signup");
