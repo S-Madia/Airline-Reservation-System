@@ -78,7 +78,7 @@
     background-color: #ffffff; /* Background color of the submenu */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add a shadow for a dropdown effect */
     padding: 1rem;
-    width: 200px;
+    width: 290px;
     top: 100%; /* Position below the parent li */
     left: 50%; /* Position at the center of the parent li */
     transform: translateX(-50%); /* Center the submenu */
