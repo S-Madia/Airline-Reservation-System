@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const servicesSchema = new Schema({
     servicePackage:{
-        type: [String],
+        type: String,
         required: true,
     },
     serviceDesc:{
