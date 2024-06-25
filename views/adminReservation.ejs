@@ -19,14 +19,14 @@
             <% reservations.forEach(reservation => { %>
                 <tr>
                     <td><%= reservation._id %></td>
-                    <td><%= reservation.passengerID.firstname %> <%= reservation.passengerID.lastname %></td>
-                    <td><%= reservation.flightID %></td>
-                    <td><%= reservation.seatID.seatID %></td>
-                    <td><%= reservation.seatID.travel_class %></td>
-                    <td><%= reservation.transactionID %></td>
-                    <td><%= reservation.flightType %></td>
-                    <td><%= reservation.flightStatus %></td>
-                    <td><%= reservation.reservationDate.toDateString() %></td>
+                    <td><%= reservation.passengerID ? `${reservation.passengerID.firstname} ${reservation.passengerID.lastname}` : 'N/A' %></td>
+                    <td><%= reservation.flightID ? reservation.flightID._id : 'N/A' %></td>
+                    <td><%= reservation.seatID ? reservation.seatID.seatID : 'N/A' %></td>
+                    <td><%= reservation.seatID ? reservation.seatID.travel_class : 'N/A' %></td>
+                    <td><%= reservation.transactionID ? reservation.transactionID : 'N/A' %></td>
+                    <td><%= reservation.flightType ? reservation.flightType : 'N/A' %></td>
+                    <td><%= reservation.flightStatus ? reservation.flightStatus : 'N/A' %></td>
+                    <td><%= reservation.reservationDate ? reservation.reservationDate.toDateString() : 'N/A' %></td>
                 </tr>
             <% }) %>
         </tbody>
