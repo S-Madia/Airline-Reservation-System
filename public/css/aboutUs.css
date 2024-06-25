@@ -219,6 +219,11 @@ header {
   font-weight: 600;
   font-size: 2.4rem;
   text-decoration: none;
+  margin-top: 30px;
+}
+
+.logo img{
+  width: 50%;
 }
 
 .navbar {
