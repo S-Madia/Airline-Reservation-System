@@ -43,11 +43,12 @@ header {
   font-weight: 600;
   font-size: 2.4rem;
   text-decoration: none;
+  margin-top: .5em;
 }
 
 .logo img{
-  width: 66%;
-  
+  width: 50%;
+ 
 }
 
 .navbar {
