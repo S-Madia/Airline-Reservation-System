@@ -359,53 +359,23 @@ const submitDetailsPost = async (req,res)=>{
 
 const adminReservationGet = async (req,res)=>{
     try {
-        const userId = req.session.userId;
+ // Fetch all ReservationDetails and populate the passengerID with PersonalDetails and seatID with SeatPlan
+ const reservations = await ReservationDetails.find()
+ .populate({
+     path: 'passengerID',
+     model: 'PersonalDetails' // Make sure this matches the model name
+ })
+ .populate({
+     path: 'seatID',
+     model: 'seatDetails' // Make sure this matches the model name
+ })
+ .exec();
 
-        if (!userId) {
-            return res.status(401).send('User not logged in');
-        }
-
-        // Fetch all personal details for the given user ID
-        const allPersonalDetails = await PersonalDetails.find({ user: userId }).lean();
-
-        if (!allPersonalDetails || allPersonalDetails.length === 0) {
-            return res.status(404).send('No Reservation found for the user');
-        }
-
-        // Array to hold all reservations grouped by personalDetails
-        const reservationsByPersonalDetails = [];
-
-        // Iterate over each personalDetails and fetch reservations
-        for (const personalDetails of allPersonalDetails) {
-            const reservations = await ReservationDetails.find({ passengerID: personalDetails._id })
-                .populate({
-                    path: 'passengerID',
-                    model: 'PersonalDetails'
-                })
-                .populate({
-                    path: 'seatID',
-                    model: 'seatDetails'
-                })
-                .populate({
-                    path: 'transactionID',
-                    model: 'TransactDetails'
-                })
-                .populate({
-                    path: 'flightID',
-                    model: 'Flight'
-                })
-                .exec();
-
-            reservationsByPersonalDetails.push({
-                personalDetails: personalDetails,
-                reservations: reservations
-            });
-        }
-
-        // Render the view, passing in the array of reservations grouped by personalDetails
-        res.render("reservationlist", {
-            reservationsByPersonalDetails: reservationsByPersonalDetails
-        });
+// Render the view, passing in the title and the list of reservations with populated passenger details
+res.render("adminReservation", {
+ title: "Admin Reservation Page",
+ reservations: reservations
+});
 
     } catch (err) {
         // Handle errors by sending a JSON response with the error message
@@ -416,6 +386,7 @@ const adminReservationGet = async (req,res)=>{
 const reservationListGet = async (req,res)=>{
     try {
         const userId = req.session.userId;
+        const name = req.session.email;
 
         if (!userId) {
             return res.status(401).send('User not logged in');
@@ -460,7 +431,7 @@ const reservationListGet = async (req,res)=>{
 
         // Render the view, passing in the array of reservations grouped by personalDetails
         res.render("reservationlist", {
-            reservationsByPersonalDetails: reservationsByPersonalDetails
+            reservationsByPersonalDetails: reservationsByPersonalDetails,name: name, logstatus: "LOGOUT"
         });
 
     } catch (err) {

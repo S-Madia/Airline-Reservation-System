@@ -31,6 +31,7 @@ router.get("/aboutUs", (req, res) => {
     }
     
 });
+
 router.get("/addFlight", (req, res) => {
     res.render("addFlight");
 });

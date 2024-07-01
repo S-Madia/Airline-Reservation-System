@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function toggleReturnDateSection() {
       if (tripTypeSelect.value === 'round-trip') {
-        returnDateSection.style.display = 'block';
+        returnDateSection.style.display = 'flex';
       } else {
         returnDateSection.style.display = 'none';
       }
