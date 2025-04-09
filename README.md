@@ -1,4 +1,4 @@
-Flight Express Airline Reservation System
+**Flight Express Airline Reservation System**
 Flight Express is an airline reservation system built using EJS, MongoDB, Express, and Node.js. The system consists of two main parts: an Admin Dashboard and a User Interface. It allows users to book flights, view available options, and manage their reservations, while administrators can manage flight data, users, and bookings.
 
 Features
